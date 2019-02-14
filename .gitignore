@@ -1,0 +1,16 @@
+#General crap
+.DS_Store
+*/LaTex/*.DS_Store
+*~
+*/*.dSYM
+*/*.dSYM
+*.dSYM
+
+*/LaTex/*.pdf
+*/LaTex/*.log
+*/LaTex/*.aux
+*/LaTex/*.toc
+*/LaTex/Tasks/*.log
+*/LaTex/Tasks/*.aux
+
+
