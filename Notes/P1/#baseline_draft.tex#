@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\newcommand{\heart}{\ensuremath\varheartsuit}
+\newcommand{\butt}{\rotatebox[origin=c]{180}{\heart}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\title{UIS Draft/Notes}
+\author{Sarah, Casper, Mads, Torbe}n
+\date{February 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Planlægning af forreberedelsesfasen}
+
+Vi mangler resten af baseline 
+\\
+Vælg fokusgruppe (Diabetikere/andet?)
+
+\section{Etablering af overblik}
+
+Få sat tidslinje for eget arbejde - hvornår skal hvad laves/være færdigt?
+\\
+Få kigget på "Min sundhedsplatform" - få skabt overblik over dets funktioner/formål/mangler
+\\
+Gør intensiv brug af "Dokument analyse"
+\\
+Overblik over projektets baggrund og formål. 
+
+\section{Research}
+
+Dannelse af fundamentalt overblik over den pågældende sygdom
+\\
+"Research meeeting" indenbyrdes i gruppen - fælles opsummering af research (vi er på samme fod)
+
+\section{Valg af deltagere}
+
+Forskellige aldersgrupper
+\\
+Forældre til børn af fokusgruppen
+\\
+Involverede udenfor fokusgruppen (medlemmer af relevant forening, relateret til Min Sundhedsplatform)
+\\
+
+\section{Organisering}
+
+Uddelegering af arbejdsopgaver
+
+\section{Informationsindsamling}
+
+Reel brugerdeltagelse:\\ 
+- Interview med patienter\\
+- Interview med behandlere og Observation af arbejdsgang for behandlere
+\\
+Arbejdspraktis skal opleves:\\
+- Interview med behandlere og Observation af arbejdsgang for behandlere
+
+\section{Interessant-analyse}
+
+Hvem er interessanter?\\
+- Sundhedsministeren\\
+- Region Hovedstaden\\
+- Foreninger\\
+(Udenforstående - ikke en del af projektet).
+
+\section{Forankring}
+
+Inddragelse af udenforstående
+
+\section{Forståele af forretningsmodel}
+
+Fælles opsummering af forretningsmodellen bag sundhedsplatformen
+
+\section{Udspecificering af opgaven}
+
+Iteration af vores overblik (Se "Etablering af Overblik")
+\\
+Stil konkrete kriterier og procedurer for, hvornår første rapport er færdig
+\\
+Revurdering af planlægning overordnet
+
+\section{Kritiske faktorer}
+
+Find fokusgruppe/folk at interviewe
+\\
+SWOT-analyse
+
+\section{Klargørelse af strategi-analyse}
+
+Argumentering for størrelse af strategi-analyse (fastsat)
+\\
+
+\section{Strategi-analyse}
+
+Reference til forretnings-strategi, IT-strategi
+\\
+Reference til arbejdsdomæne
+\\
+Analysér/Skitsér deres omgivelser
+
+\section{Skrivning af projekt-grundlag}
+
+Beslutnignsgrundlag for formen af projektets design
+
+\section{Noter}
+
+Samlet vision opnås ved, at produkt fra forrige fase ligger grundlag for næste
+
+\end{document}
