@@ -10,7 +10,10 @@
 */LaTex/*.log
 */LaTex/*.aux
 */LaTex/*.toc
-*/LaTex/Tasks/*.log
-*/LaTex/Tasks/*.aux
+*/LaTex/*.out
+*/LaTex/*.tdo
+*/LaTex/*.synctex.gz
+*/LaTex/Sections/*.log
+*/LaTex/Sections/*.aux
 
 

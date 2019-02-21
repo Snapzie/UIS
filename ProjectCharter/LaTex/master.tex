@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+    \usepackage[margin=1in]{geometry}
+    \usepackage{amsmath}
+    \usepackage[utf8]{inputenc}
+    \usepackage{graphicx}
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+    \usepackage[T1]{fontenc}
+    \usepackage{amssymb}
+    \usepackage{listings}
+    \usepackage{minted}
+    \usepackage[colorinlistoftodos]{todonotes}
+    \usepackage{wrapfig}
+    \usepackage{subcaption}
+    \usepackage{hyperref}
+    \usepackage{todonotes}
+    \usepackage[final]{pdfpages}
+    \title{UIS Projektgrundlag }
+    \author{Casper Bresdahl whs715\\ Torben Olai Milhøj vrw704\\ Sarah Willumsen zql291\\} %\todo{Tilføj Mads}
+    \date{}
+    \begin{document}
+        \maketitle
+        \pagestyle{fancy}
+        \cfoot{Page \thepage ~of \pageref{LastPage}}
+        %Af en eller anden grund stod der INDHOLD i sidehovedet, disse tre linjer fjerner dette
+        \chead{}
+        \lhead{}
+        \rhead{}
+        %Fjerner linjen i sidehovedet
+        \renewcommand{\headrulewidth}{0pt}
+
+        \tableofcontents
+        \newpage
+        \include{Sections/Introduction}
+        
+        \end{document}
