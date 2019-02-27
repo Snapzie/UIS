@@ -20,6 +20,7 @@
     \usepackage{todonotes}
     \usepackage[final]{pdfpages}
     \usepackage{parskip}
+    \usepackage{float}
     
     \pagestyle{fancy}
 
@@ -43,5 +44,7 @@
         \include{Sections/Premise}
         \include{Sections/Organization}
         \include{Sections/Method}
+        %\includepdf[pages=1,pagecommand={\section{Bilag 1:} \thispagestyle{fancy}}, fitpaper=true, offset=0 -80]{Materials/Questionaire.pdf}
+        %\includepdf[pages=2-,pagecommand={\thispagestyle{fancy}}, fitpaper=true]{Materials/Questionaire.pdf}
         
         \end{document}
