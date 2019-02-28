@@ -1,19 +1,16 @@
 #General crap
 .DS_Store
-*/LaTex/*.DS_Store
-*~
-*/*.dSYM
-*/*.dSYM
-*.dSYM
+**/LaTex/*.DS_Store
+**~
+**.dSYM
 
-*/LaTex/*.pdf
-*/LaTex/*.log
-*/LaTex/*.aux
-*/LaTex/*.toc
-*/LaTex/*.out
-*/LaTex/*.tdo
-*/LaTex/*.synctex.gz
-*/LaTex/Sections/*.log
-*/LaTex/Sections/*.aux
+**/*.pdf
+**/*.log
+**/*.aux
+**/*.toc
+**/*.out
+**/*.tdo
+**/*.synctex.gz
+
 
 

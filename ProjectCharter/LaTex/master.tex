@@ -1,4 +1,8 @@
 \documentclass[12pt]{article}
+	\usepackage[danish]{babel}
+	\usepackage{tabularx}
+	\usepackage{varwidth}
+	\usepackage{array}
     \usepackage[margin=1in]{geometry}
     \usepackage{amsmath}
     \usepackage[utf8]{inputenc}
@@ -15,12 +19,17 @@
     \usepackage{hyperref}
     \usepackage{todonotes}
     \usepackage[final]{pdfpages}
+    \usepackage{parskip}
+    \usepackage{float}
+    
+    \pagestyle{fancy}
+
     \title{UIS Projektgrundlag }
-    \author{Casper Bresdahl whs715\\ Torben Olai Milhøj vrw704\\ Sarah Willumsen zql291\\} %\todo{Tilføj Mads}
+    \author{Casper Bresdahl whs715\\ Torben Olai Milhøj vrw704\\ Sarah Willumsen zql291\\ Mads Rosenlund Jensen lfh632\\}
     \date{}
     \begin{document}
         \maketitle
-        \pagestyle{fancy}
+        \thispagestyle{empty}
         \cfoot{Page \thepage ~of \pageref{LastPage}}
         %Af en eller anden grund stod der INDHOLD i sidehovedet, disse tre linjer fjerner dette
         \chead{}
@@ -31,6 +40,14 @@
 
         \tableofcontents
         \newpage
-        \include{Sections/Introduction}
+        \setcounter{page}{1}
+        \include{Sections/Premise}
+        \include{Sections/InlineAnalysis}
+        \include{Sections/Organization}
+        \include{Sections/Method}
+        \includepdf[pages=1,pagecommand={\section{Bilag 1} \thispagestyle{empty}}, fitpaper=true, offset=0 -80]{Materials/Questionaire.pdf}
+        \includepdf[pages=2-,pagecommand={\thispagestyle{empty}}, fitpaper=true]{Materials/Questionaire.pdf}
         
+        \includepdf[pages=1,pagecommand={\section{Bilag 2} \thispagestyle{empty}}, fitpaper=true, offset=0 -50]{Materials/Interview.pdf}
+        \includepdf[pages=2-,pagecommand={\thispagestyle{empty}}, fitpaper=true]{Materials/Interview.pdf}
         \end{document}
