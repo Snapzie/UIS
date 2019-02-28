@@ -20,6 +20,7 @@
     \usepackage{todonotes}
     \usepackage[final]{pdfpages}
     \usepackage{parskip}
+    \usepackage{float}
     
     \pagestyle{fancy}
 
@@ -41,7 +42,12 @@
         \newpage
         \setcounter{page}{1}
         \include{Sections/Premise}
+        \include{Sections/InlineAnalysis}
         \include{Sections/Organization}
         \include{Sections/Method}
+        \includepdf[pages=1,pagecommand={\section{Bilag 1} \thispagestyle{empty}}, fitpaper=true, offset=0 -80]{Materials/Questionaire.pdf}
+        \includepdf[pages=2-,pagecommand={\thispagestyle{empty}}, fitpaper=true]{Materials/Questionaire.pdf}
         
+        \includepdf[pages=1,pagecommand={\section{Bilag 2} \thispagestyle{empty}}, fitpaper=true, offset=0 -50]{Materials/Interview.pdf}
+        \includepdf[pages=2-,pagecommand={\thispagestyle{empty}}, fitpaper=true]{Materials/Interview.pdf}
         \end{document}
