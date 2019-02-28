@@ -38,7 +38,13 @@
         %Fjerner linjen i sidehovedet
         \renewcommand{\headrulewidth}{0pt}
 
-        \tableofcontents
+        \pagestyle{empty}
+        {
+        	\renewcommand{\thispagestyle}[1]{}
+        	\tableofcontents
+        }
+        \clearpage
+        \pagestyle{fancy}
         \newpage
         \setcounter{page}{1}
         \include{Sections/Premise}
