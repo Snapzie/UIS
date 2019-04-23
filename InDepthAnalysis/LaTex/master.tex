@@ -21,6 +21,12 @@
     \usepackage[final]{pdfpages}
     \usepackage{parskip}
     \usepackage{float}
+    \usepackage{adjustbox}
+    \usepackage{colortbl}
+    \usepackage{color}
+    \definecolor{Gray}{gray}{0.8}
+    \definecolor{LightGray}{gray}{0.9}
+    \definecolor{WhiteGray}{gray}{0.95}
     
     \pagestyle{fancy}
 
@@ -48,4 +54,6 @@
         \newpage
         \setcounter{page}{1}
         	\include{Sections/Summery}
+        	\include{Sections/Konsekvensanalyse1}
+        	\include{Sections/ERDiagram}
         \end{document}
