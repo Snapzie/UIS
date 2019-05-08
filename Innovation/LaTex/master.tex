@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+	\usepackage[danish]{babel}
+	\usepackage{tabularx}
+	\usepackage{varwidth}
+	\usepackage{array}
+    \usepackage[margin=1in]{geometry}
+    \usepackage{amsmath}
+    \usepackage[utf8]{inputenc}
+    \usepackage{graphicx}
+    \usepackage{fancyhdr}
+    \usepackage{lastpage}
+    \usepackage[T1]{fontenc}
+    \usepackage{amssymb}
+    \usepackage{listings}
+    \usepackage{minted}
+    \usepackage[colorinlistoftodos]{todonotes}
+    \usepackage{wrapfig}
+    \usepackage{subcaption}
+    \usepackage{hyperref}
+    \usepackage{todonotes}
+    \usepackage[final]{pdfpages}
+    \usepackage{parskip}
+    \usepackage{float}
+    \usepackage{adjustbox}
+    \usepackage{colortbl}
+    \usepackage{color}
+    \usepackage{xcolor}
+    \definecolor{Gray}{gray}{0.8}
+    \definecolor{LightGray}{gray}{0.9}
+    \definecolor{WhiteGray}{gray}{0.95}
+    
+    \pagestyle{fancy}
+
+    \title{Diabetes og Min Sundhedsplatform - Dybdeanalyse}
+    \author{Casper Bresdahl whs715\\ Torben Olai Milhøj vrw704\\ Sarah Willumsen zql291\\ Mads Rosenlund Jensen lfh632\\}
+    \date{}
+    \begin{document}
+        \maketitle
+        \thispagestyle{empty}
+        \cfoot{Page \thepage ~of \pageref{LastPage}}
+        %Af en eller anden grund stod der INDHOLD i sidehovedet, disse tre linjer fjerner dette
+        \chead{}
+        \lhead{}
+        \rhead{}
+        %Fjerner linjen i sidehovedet
+        \renewcommand{\headrulewidth}{0pt}
+
+        \pagestyle{empty}
+        {
+        	\renewcommand{\thispagestyle}[1]{}
+        	\tableofcontents
+        }
+        \clearpage
+        \pagestyle{fancy}
+        \newpage
+        \setcounter{page}{1}
+        %	\include{Sections/Summery}
+        %	\include{Sections/Background}
+        %	\include{Sections/GoalsProblemsNeeds}
+        %	\include{Sections/Priority}
+        %	\include{Sections/Konsekvensanalyse1}
+        %	\include{Sections/ERDiagram}
+        \end{document}
