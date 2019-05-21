@@ -23,6 +23,10 @@ class Patients(tuple, UserMixin):
     def get_id(self):
        return (self.CPR_number)
 
+class Diagnose(tuple):
+    def __init__(self, user_data):
+        self.illness = user_data[0]
+
 class Pharmacy(tuple):
     def __init__(self, user_data):
         self.name = user_data[0]
@@ -38,6 +42,20 @@ class Prescription(tuple):
         self.status = user_data[5]
         self.prescribed = user_data[6]
         self.expiration = user_data[7]
+        self.illness = user_data[8]
+
+class History(tuple):
+    def __init__(self, user_data):
+        self.patient_CPR = user_data[0]
+        self.medicine_name = user_data[1]
+        self.medicine_concentration = user_data[2]
+        self.diagnosed_illness = user_data[3]
+        self.time = user_data[4]
+
+class In_treatment_for(tuple):
+    def __init__(self, user_data):
+        self.patient_CPR = user_data[0]
+        self.illness = user_data[1]
 
 def select_Patient(CPR_number, conn):
     cur = conn.cursor()
@@ -60,4 +78,26 @@ def select_Prescriptions(CPR_number, conn):
     prescriptions = []
     for row in cur.fetchall():
         prescriptions.append(Prescription(row))
+    cur.close()
     return prescriptions
+
+def insert_History(prescription, conn):
+    cur = conn.cursor()
+    sql = """
+    INSERT INTO History(patient_CPR, medicine_name, medicine_concentration, diagnosed_illness, time) 
+    VALUES (%s, %s, %s, %s, CURRENT_DATE)
+    """
+    cur.execute(sql, (prescription.patient_CPR, prescription.medicine_name, prescription.medicine_concentration, prescription.illness))
+    cur.close()
+
+def get_History(CPR_number, conn):
+    cur = conn.cursor()
+    sql = """
+    SELECT * from History WHERE patient_CPR = %s
+    """
+    cur.execute(sql,(CPR_number,))
+    history = []
+    for row in cur.fetchall():
+        history.append(History(row))
+    cur.close()
+    return history

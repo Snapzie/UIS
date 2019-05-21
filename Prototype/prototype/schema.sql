@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS Prescription(
     renewal date PRIMARY KEY,
     status text,
     prescribed date,
-    expiration date
+    expiration date,
+    illness text REFERENCES Diagnose(illness)
 );
 
 CREATE TABLE IF NOT EXISTS History(

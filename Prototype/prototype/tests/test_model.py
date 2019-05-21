@@ -1,5 +1,5 @@
 import unittest
-from prototype.models import select_Patient, select_Prescriptions
+from prototype.models import select_Patient, select_Prescriptions, get_History, insert_History
 import psycopg2
 
 db = "dbname='prototypetests' user='Casper' host='localhost' password = ''"
@@ -44,6 +44,18 @@ class MyTestCase(unittest.TestCase):
         perc = p[0]
         self.assertTrue(perc.patient_CPR == 1000 and perc.status == 'Ordered')
 
+    def test_get_history(self):
+        h = get_History(1000, conn)
+        self.assertEqual(len(h), 1)
+
+    def test_insert_history(self):
+        h = get_History(5000, conn)
+        self.assertEqual(len(h), 0)
+        p = select_Prescriptions(5000, conn)
+        hisPerc = p[0]
+        insert_History(hisPerc, conn)
+        h = get_History(5000, conn)
+        self.assertEqual(len(h), 1)
 
 if __name__ == '__main__':
     unittest.main()
