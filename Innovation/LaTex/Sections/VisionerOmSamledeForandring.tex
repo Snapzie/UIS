@@ -43,7 +43,7 @@ Recept skal kun kunne fornys, når sidst udleverede dosis er ved slippe op.
 Vi vurderer, at 'Receptfornyelse' er en kompliceret funktionalitet, da den skal ny-udvikles, og da der ikke er noget eksisterende funktionalitet, der kan genbruges. Funktionaliteten er også kompliceret, fordi sikkerheden skal være høj i forhold til, at der ikke må udleveres for meget medicin, og da det kun er den ordinerede medicin, der må fornys. \\
 Udviklingen af statuslinje, for gangen i receptfornyelsen, vil også være kompliceret, fordi registreringen skal overføres af sundhedspersonalet fra Sundhedsplatformen til MinSP.\\
 Modtagerapotek skal kunne vælges i forhold til bopæl, og det vurdere vi også vil være kompliceret, fordi der skal bruges data omkring hvor alle apoteker i Region Sjælland ligger.\\
-Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhold til tid eller dosis ved sidste fornyelse. Dette vurderes igen at være kompliceret at udvikle, fordi der skal være en database hvor oplysninger om ordineret medicin, historikken for udleveret medicin og receptfornyelser gemmes. \textcolor{red}{(findes den eller skal den udvikles - ?)} \\ 
+Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhold til tid eller dosis ved sidste fornyelse. Dette vurderes igen at være kompliceret at udvikle, fordi der skal være en database hvor oplysninger om ordineret medicin, historikken for udleveret medicin og receptfornyelser gemmes. \textcolor{red}{(findes den eller skal den udvikles - ?)}\todo{kan først afklares når protypen er done} \\ 
 Til patient databasen skal der tilknyttes attributterne 'Primær apotek' og 'Sekundær apotek'.
 \\\\
 \textbf{Prioritet 2, Samling af al information} \\
@@ -115,7 +115,6 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 En automatisk receptfornyelse vil muligvis ændre arbejdsgangen for sundhedspersonalet. \\ 
 Vi tænker at lægen fortsat stadigvæk skal tjekke, at ordineringen er korrekt i forhold til journalen, men at læge-sekretæren slipper for at skrive besked tilbage til patienten, da patienten nu selv kan se forløbet i statuslinjen.
 %
-\textcolor{red}{ - evt. udarbejde et scenarie for arbejdsgangen for sundhedspersonalet i forhold til Receptfornyelse.}
 \\\\
 \textbf{Prioritet 2, Samling af al information} \\
 Hvis funktionaliteten implementeres via links, som forslået, vil der ikke være nogen ændringer til arbejdsgange og arbejdets organisering. \\
@@ -123,7 +122,8 @@ Hvis ikke funktionaliteten implementeres via links, men som en ny-udviklet infor
 \\\\
 \textbf{Prioritet 3, Uniforme Prøvesvar} \\
 Funktionaliteten vil give ekstra arbejde for lægesekretærer eller laboratorie medarbejdere i forhold til indrapporteringen af prøvesvar, da der vil flere informationer, der skal indtastes. Der vil forinden være ekstra arbejde for lægen, da det er denne, der skal informere laboratorie-personale eller lægesekretær om hvilken diagnose de enkle prøvesvar vedrøre.\\
-Der skal tages stilling til hvor i organisationen indrapporingen skal fortages.
+Der skal tages stilling til hvor i organisationen indrapporteringen skal fortages.
+\\\\
 \subsection{Kvalifikationsbehov}
 \textbf{Prioritet 1, Receptfornyelse} \\
 Receptfornyelses funktionaliteten vil ikke kræve nogen større oplæring af sundhedspersonalet, kun en introduktion til hvordan den nye funktionalitet fungerer.
