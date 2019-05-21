@@ -20,6 +20,9 @@ class Patients(tuple, UserMixin):
         self.CPR_number = user_data[0]
         self.password = user_data[1]
 
+    def get_id(self):
+       return (self.CPR_number)
+
 class Pharmacy(tuple):
     def __init__(self, user_data):
         self.name = user_data[0]
@@ -36,7 +39,7 @@ class Prescription(tuple):
         self.prescribed = user_data[6]
         self.expiration = user_data[7]
 
-def select_Patient(CPR_number):
+def select_Patient(CPR_number, conn):
     cur = conn.cursor()
     sql = """
     SELECT * FROM Patients
