@@ -1,0 +1,22 @@
+Assuming you are in the root of the project.
+
+1. Install dependencies.
+
+pip install flask flask_bcrypt flask_login flask_wtf wtforms psycopg2
+
+2. Setup database (assuming you use the public schema).
+Open up psql like so
+	psql -U[your username] -W
+Write the following statement
+	Create database test;
+Exit with
+	\q
+Run the following 2 commands
+psql -U[your username] -W -dtest -f bank\schema.sql
+psql -U[your username] -W -dtest -f bank\schema_ins.sql
+
+3.
+python run.py
+
+4.
+Use your web browser to go to the address it says it is running on in the bash
