@@ -1,4 +1,4 @@
-\i schema_drop.sql
+\i /Users/Casper/Uni/UIS/UIS/Prototype/prototype/schema_drop.sql
 
 CREATE TABLE IF NOT EXISTS Patients(
     CPR_number integer PRIMARY KEY,

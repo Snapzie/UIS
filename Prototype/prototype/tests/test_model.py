@@ -1,5 +1,5 @@
 import unittest
-from prototype.models import select_Patient
+from prototype.models import select_Patient, select_Prescriptions
 import psycopg2
 
 db = "dbname='prototypetests' user='Casper' host='localhost' password = ''"
@@ -28,7 +28,21 @@ class MyTestCase(unittest.TestCase):
 
     def test_select_patient(self):
         u = select_Patient(5000, conn)
-        self.assertTrue(u.password == 'abe')
+        self.assertTrue(u.password == 'abe' and u.CPR_number == 5000)
+
+    def test_select_prescriptions(self):
+        p = select_Prescriptions(5000, conn)
+        self.assertEqual(len(p), 3)
+
+    def test_select_prescriptions_no_prescription(self):
+        p = select_Prescriptions(2000, conn)
+        self.assertEqual(len(p), 0)
+
+    def test_select_prescriptions_is_class(self):
+        p = select_Prescriptions(1000, conn)
+        self.assertEqual(len(p), 1)
+        perc = p[0]
+        self.assertTrue(perc.patient_CPR == 1000 and perc.status == 'Ordered')
 
 
 if __name__ == '__main__':

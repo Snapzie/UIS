@@ -49,3 +49,15 @@ def select_Patient(CPR_number, conn):
     user = Patients(cur.fetchone()) if cur.rowcount > 0 else None;
     cur.close()
     return user
+
+def select_Prescriptions(CPR_number, conn):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Prescription
+    WHERE patient_CPR = %s
+    """
+    cur.execute(sql, (CPR_number,))
+    prescriptions = []
+    for row in cur.fetchall():
+        prescriptions.append(Prescription(row))
+    return prescriptions
