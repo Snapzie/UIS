@@ -44,7 +44,7 @@ Recept skal kun kunne fornys, når sidst udleverede dosis er ved slippe op.
 Vi vurderer, at 'Receptfornyelse' er en kompliceret funktionalitet, da den skal ny-udvikles, og da der ikke er noget eksisterende funktionalitet, der kan genbruges. Funktionaliteten er også kompliceret, fordi sikkerheden skal være høj i forhold til, at der ikke må udleveres for meget medicin, og da det kun er den ordinerede medicin, der må fornys. \\
 Udviklingen af statuslinje, for gangen i receptfornyelsen, vil også være kompliceret, fordi registreringen skal overføres af sundhedspersonalet fra Sundhedsplatformen til MinSP.\\
 Modtagerapotek skal kunne vælges i forhold til bopæl, og det vurdere vi også vil være kompliceret, fordi der skal bruges data omkring hvor alle apoteker i Region Sjælland ligger.\\
-Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhold til tid eller dosis ved sidste fornyelse. Hertil skal bruges databaser med oplysninger om om ordineret medicin, historikken for udleveret medicin og receptfornyelser. Vi forudsætter at databaser med disse oplysninger allerede findes, og der skal laves integration med disse databaser.\\
+Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhold til sidste fornyelse. Hertil skal bruges databaser med oplysninger om om ordineret medicin, historikken for udleveret medicin og receptfornyelser. Vi forudsætter at databaser med disse oplysninger allerede findes, men at der skal laves integration med disse databaser.\\
 Til patient databasen skal der tilknyttes attributterne 'Primær apotek' og 'Sekundær apotek'.
 \\\\
 \textbf{Prioritet 2, Samling af al information} \\
@@ -75,6 +75,10 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\caption{Mock-up for modulet 'Receptfornyelse': Undermenu, 'Forny recept'}
 	\label{fig:Mock-Up}
 \end{figure}
+I 'Vælg modtagerapotek' skal man i en drop-down menu kunne vælge mellem de to apoteker tættest på en.\\
+Bemærk at knappen 'Forny recept' skal være blokkeret i perioden hvor recept ikke må fornys. Der skal udover indformeres om hvornår patienten kan forny sin recept.\\
+Når patienten fornyer sin recept skal være en fortrydelses besked: 'Er du sikker på du vil forny din recept?' Hvor man skal kunne vælge 'ja' eller 'nej'. Dette kan laves som en pop-up. \\
+Der er to forslag til måden status for fornyelse kan vises på. Status mulighederne i løsning to er: Bestilt, bestilling modtaget, godkendt og kan afhentes på Apotek.\\
 \begin{figure}[H]
 	\centering
 	\includegraphics[angle=0, height=0.2\textheight]{Materials/FornyRecept_Medicinkort.pdf}
@@ -110,6 +114,7 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\caption{Mock-up for modulet 'Prøvesvar'}
 	\label{fig:Mock-Up}
 \end{figure}
+Når patienten klikker på knappen 'Forklaring til prøvetype' skal der vises en tekst på dansk med forklaringen til prøvetypen. Det kan laves som en pop-up eller ny side.\\
 
 \subsection{Arbejdets organisering}  
 \textbf{Prioritet 1, Receptfornyelse} \\
