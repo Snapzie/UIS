@@ -15,31 +15,27 @@ CREATE TABLE IF NOT EXISTS Pharmacy(
 );
 
 CREATE TABLE IF NOT EXISTS Medicine(
-    name text PRIMARY KEY,
-    concentration text UNIQUE
+    name text,
+    concentration text,
+    PRIMARY KEY (name, concentration)
 );
 
 CREATE TABLE IF NOT EXISTS Prescription(
     pharmacy_name text REFERENCES Pharmacy(name),
-    medicine_name text REFERENCES Medicine(name),
-    medicine_concentration text REFERENCES Medicine(concentration),
+    medicine_name text,
+    medicine_concentration text,
     patient_CPR integer REFERENCES Patients(CPR_number),
-    renewal date PRIMARY KEY,
+    renewal date,
     status text,
     prescribed date,
     expiration date,
-    illness text REFERENCES Diagnose(illness)
-);
-
-CREATE TABLE IF NOT EXISTS History(
-    patient_CPR integer REFERENCES Patients(CPR_number),
-    medicine_name text REFERENCES Medicine(name),
-    medicine_concentration text REFERENCES Medicine(concentration),
-    diagnosed_illness text REFERENCES Diagnose(illness),
-    time date default current_date PRIMARY KEY
+    illness text REFERENCES Diagnose(illness),
+    FOREIGN KEY (medicine_name, medicine_concentration) REFERENCES Medicine(name, concentration),
+    PRIMARY KEY (pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal)
 );
 
 CREATE TABLE IF NOT EXISTS In_treatment_for(
     patient_CPR integer REFERENCES Patients(CPR_number),
-    illness text REFERENCES Diagnose(illness)
+    illness text REFERENCES Diagnose(illness),
+    PRIMARY KEY (patient_CPR, illness)
 );

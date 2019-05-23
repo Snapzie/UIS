@@ -21,33 +21,29 @@ CREATE TABLE IF NOT EXISTS Pharmacy(
 );
 
 CREATE TABLE IF NOT EXISTS Medicine(
-    name text PRIMARY KEY,
-    concentration text UNIQUE
+    name text,
+    concentration text,
+    PRIMARY KEY (name, concentration)
 );
 
 CREATE TABLE IF NOT EXISTS Prescription(
     pharmacy_name text REFERENCES Pharmacy(name),
-    medicine_name text REFERENCES Medicine(name),
-    medicine_concentration text REFERENCES Medicine(concentration),
+    medicine_name text,
+    medicine_concentration text,
     patient_CPR integer REFERENCES Patients(CPR_number),
-    renewal date PRIMARY KEY,
+    renewal date,
     status text,
     prescribed date,
     expiration date,
-    illness text REFERENCES Diagnose(illness)
-);
-
-CREATE TABLE IF NOT EXISTS History(
-    patient_CPR integer REFERENCES Patients(CPR_number),
-    medicine_name text REFERENCES Medicine(name),
-    medicine_concentration text REFERENCES Medicine(concentration),
-    diagnosed_illness text REFERENCES Diagnose(illness),
-    time date default current_date PRIMARY KEY
+    illness text REFERENCES Diagnose(illness),
+    FOREIGN KEY (medicine_name, medicine_concentration) REFERENCES Medicine(name, concentration),
+    PRIMARY KEY (pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal)
 );
 
 CREATE TABLE IF NOT EXISTS In_treatment_for(
     patient_CPR integer REFERENCES Patients(CPR_number),
-    illness text REFERENCES Diagnose(illness)
+    illness text REFERENCES Diagnose(illness),
+    PRIMARY KEY (patient_CPR, illness)
 );
 
 -- Patients
@@ -65,12 +61,10 @@ INSERT INTO public.Pharmacy(name, address) VALUES ('Pharmacy 2', 'Street 2');
 -- Medicine
 INSERT INTO public.Medicine(name, concentration) VALUES ('Medicine 1', '1M');
 INSERT INTO public.Medicine(name, concentration) VALUES ('Medicine 2', '2M');
-INSERT INTO public.Medicine(name, concentration) VALUES ('Medicine 3', '3M');
+INSERT INTO public.Medicine(name, concentration) VALUES ('Medicine 3', '2M');
 -- Prescription
-INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 1', '1M', 5000, current_date, 'Ordered', current_date, current_date, 'Diabetes');
-INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 2', '2M', 5000, TO_DATE('17/12/2015', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
-INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 3', '3M', 5000, TO_DATE('17/12/2016', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
+INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 1', '1M', 5000, TO_DATE('17/12/2015', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
+INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 2', '2M', 5000, TO_DATE('17/12/2016', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
+INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 1', 'Medicine 3', '2M', 5000, TO_DATE('17/12/2017', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
 INSERT INTO public.Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness) VALUES ('Pharmacy 2', 'Medicine 1', '1M', 1000, TO_DATE('17/12/2017', 'DD/MM/YYYY'), 'Ordered', current_date, current_date, 'Diabetes');
--- History
-INSERT INTO public.History(patient_CPR, medicine_name, medicine_concentration, diagnosed_illness, time) VALUES (1000, 'Medicine 1', '1M','Diabetes',TO_DATE('17/12/2015', 'DD/MM/YYYY'));
 commit;

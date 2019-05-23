@@ -1,0 +1,150 @@
+/*bod{
+  margin: 0;
+  background: #EBF0F5;
+  font-family: "Brix Sans",sans-serif;
+  font-weight: lighter;
+  background: url(https://minsundhedsplatform.dk/mychartppr1/da-dk/images/prelogin.jpg) no-repeat center center fixed;
+  background-size: 100%;
+}*/
+
+#wrapper{
+  margin: 0 auto; 
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+a{
+  color: #02376a;
+}
+
+a:hover{
+  color: #000!important;
+}
+
+.menu{
+  border-bottom: 1px solid #000;
+  background: #f9f9f9;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.menu li{
+  display: inline-block;
+  padding-top:0px;
+  padding: 1.2%;
+}
+
+.content_wrap{
+  margin: 0 auto;
+  background: #fff;
+  height: 100%;
+  width: 800px;
+}
+
+.content{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 0px; 
+}
+
+.border_bottom{
+  border-bottom: 1px solid #000; 
+}
+
+.logosjov{
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top:20px;
+  border-bottom: 1px solid #000;
+}
+
+.modul{
+  border-bottom: 2px solid #77abb8;
+  width: 100%;
+  height: 100%;
+  float: left;
+  background-color: #f9f9f9; 
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.modul_medicin{
+  width: 100%;
+  background-color: #f9f9f9; 
+  height: 100%;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 10px solid #fff;
+}
+
+.medicin_navn{
+  width: 60%;
+  height: 100%;
+  float: left;
+  text-align: left;
+  margin-left: 3%;
+  font-size: 12px;
+}
+
+.medicin_navn h2{
+  margin: 2px 0px 2px 0px;
+  font-size: 18px;
+}
+
+.forny_knap{
+  width: 20%;
+  float: right;
+  text-align: right;
+  margin-left: 3%;
+  margin-right: 2%;
+  height: 100%;
+  font-size: 12px;
+}
+
+.bottom{
+  width: 100%;
+  background-color: #fff; 
+  height: 100%;
+  float: left;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  margin-top: -10px;
+  padding-bottom: 10px;
+}
+
+.bottom img {
+  height: 100px;
+  padding:3%;
+}
+
+/* HERE we GO with some buttons css.... */
+.simple-button {
+  border-radius: 5px;
+  text-align: right;
+  padding-top: 5px;
+  float: left;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+/*********************** Responsive Styles ************************/
+@media screen and (max-width : 768px){
+
+
+
+}
+
+

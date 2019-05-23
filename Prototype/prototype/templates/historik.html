@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+    
+    <h1 style="border-bottom: 1px solid #000; padding-bottom: 15px; color: #02376a; font-size: 36px;">Historik</h1>
+
+    {% for h in history %}
+    <div class="modul">
+        <ul style="float:left; text-align:left;">
+            <li>Medicin: {{ h.medicine_name }}</li>
+            <li>Styrke: {{ h.medicine_concentration }}</li>
+            <li>Sidst fornyet d. {{ h.renewal }}</li>
+            <li>Behandling for: {{ h.illness }}</li>
+        </ul>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+{% endblock content %}
