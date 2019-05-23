@@ -1,4 +1,4 @@
-\i schema_drop.sql
+\i /Users/Casper/Uni/UIS/UIS/Prototype/prototype/schema_drop.sql
 
 CREATE TABLE IF NOT EXISTS Patients(
     CPR_number integer PRIMARY KEY,
@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS Prescription(
     renewal date PRIMARY KEY,
     status text,
     prescribed date,
-    expiration date
+    expiration date,
+    illness text REFERENCES Diagnose(illness)
 );
 
 CREATE TABLE IF NOT EXISTS History(
