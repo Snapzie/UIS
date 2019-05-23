@@ -18,7 +18,7 @@ Vi har herefter vores 'Recept' entitet. Denne er weak, og henter nøgler fra de 
 \begin{equation*}
 	\textrm{Recept}(\textrm{\underline{ApoNavn}, \underline{MedNavn}, \underline{MedStyrke}, \underline{PatCPR}, \underline{fornyet}, status, udstedt, udløber})
 \end{equation*}
-Hvis vi skulle lave vores relationer til om til tabeller ville der blive en en masse redundancy da alle pånær en enkelt relation vil allerede være subsets af andre tabeller. Derfor er den eneste relation som bliver lavet om til en tabel 'Behandles for'. Her vil begge nøgler være foreign keys til henholdsvis 'Patient' og 'Dignose'.
+Hvis vi skulle lave vores relationer til om til tabeller ville der blive en en masse redundancy da alle på nær en enkelt relation vil allerede være subsets af andre tabeller. Derfor er den eneste relation som bliver lavet om til en tabel 'Behandles for'. Her vil begge nøgler være foreign keys til henholdsvis 'Patient' og 'Dignose'.
 \begin{equation*}
 \textrm{BehandlesFor}(\textrm{\underline{PatCPR}, \underline{Sygdom}})
 \end{equation*}
