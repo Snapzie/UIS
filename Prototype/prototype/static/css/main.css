@@ -1,15 +1,30 @@
 body {
-  background: #fafafa;
+  background: url(https://minsundhedsplatform.dk/mychartppr1/da-dk/images/prelogin.jpg) no-repeat center center fixed;
   color: #333333;
-  margin-top: 5rem;
+  margin-top: 0px;
+  background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
 }
 
+h2{
+  font-size: 24px!important;
+  font-weight: lighter!important;
+}
+
+h3{
+  font-size: 24px;
+  font-weight: lighter;
+}
+
 .bg-steel {
   background-color: #5f788a;
+}
+
+.noget{
+  width: 800px;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -26,9 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-section {
   background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
+  padding: 0px 20px;
   border-radius: 3px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 

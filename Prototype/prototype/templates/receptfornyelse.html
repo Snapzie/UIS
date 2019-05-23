@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+    <h1 style="border-bottom: 1px solid #000; padding-bottom: 15px; color: #02376a; font-size: 36px;">Receptfornyelse</h1>
+
+    <h2 style="float:left; padding-left: 10px; margin-bottom: 5px;">Status på bestilt medicin</h2>
+
+    {% for p in percs %}
+    <div class="modul">
+        <h3 style="float:left; padding-left: 3%; font-size: 24px;">{{ p.medicine_name }}</h3>
+          <ul class="progressbar">
+              {% if p.status == 'Ordered' %}
+                <li class="active">Dato bestilt</li>
+              {% else %}
+                <li>Dato bestilt</li>
+              {% endif %}
+
+              {% if p.status == 'Recieved' %}
+                <li class="active">Modtaget af sekretær</li>
+              {% else %}
+                <li>Modtaget af sekretær</li>
+              {% endif %}
+
+              {% if p.status == 'Approved' %}
+                <li class="active">Godkendt af læge</li>
+              {% else %}
+                <li>Godkendt af læge</li>
+              {% endif %}
+
+              {% if p.status == 'Ready' %}
+                <li class="active">Klar til afhentning</li>
+              {% else %}
+                <li>Klar til afhentning</li>
+              {% endif %}
+          </ul>
+    </div>
+    {% endfor %}
+
+  <h2 style="float:left; padding-left: 10px; margin-bottom: 5px;">Din medicin</h2>
+
+    {% for p in percs %}
+  <div class="modul_medicin">
+      <div class="medicin_navn">
+          <h2>{{ p.medicine_name }}</h2>
+          <p>Styrke: {{ p.medicine_concentration }}</p>
+          <p>Behandling for: {{ p.illness }}</p>
+          <p>Fornyet sidst d. {{ p.renewal }}</p>
+          <p>Udløber d. {{ p.expiration }}</p>
+      </div>
+      <div class="forny_knap">
+        <div class="simple-button">
+            <vue-confirmation-button :messages="appliedMessages" ref="confirmationButton" v-on:confirmation-success="finished()">
+            </vue-confirmation-button>
+        </div>
+      </div>
+  </div>
+
+    {% endfor %}
+
+    {% endif %}
+{% endblock content %}
