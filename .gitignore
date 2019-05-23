@@ -8,9 +8,6 @@
 **/*.tdo
 **/*.synctex.gz
 
-# Prototype #
-Prototype/prototype/__init__.py
-
 # Compiled source #
 ###################
 **/*.com
