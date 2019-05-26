@@ -1,5 +1,14 @@
 \subsection{Prototype model}
-Ud fra vores vision om et receptfornyelsesmodul, vores udarbejdede user stories og vores MoSCoW prioriteringer har vi udviklet nedenstående ER-diagram over vores domæne.\\
+Ud fra vores vision om et receptfornyelsesmodul, vores udarbejdede user stories og vores MoSCoW prioriteringer har vi udviklet nedenstående ER-diagram over vores domæne. 
+\todo{
+	% Sarah: Jeg er ikke færdig med review, men har lige dette punkt:
+	Sarah: Jeg er usikker på om man kan lave det den vej - Har du undersøgt det? 
+	Jeg lavede det modsat -  lave current user stories ud fra ER-diagrammet (som beskrevet i opgavenformuleringen man skulle) 
+	- og brugte interviews til furture user stories 
+	- og MoSCoW til priortering af visioner 
+	- og priorteringen bruges til valg af prototype.
+}
+\\
 \missingfigure{ER diagram}\\
 Vores recept entitet kan unikt identificeres ud fra vores andre entiteters nøgler, og er derfor lavet en weak entity. Blandt vores ønskede funktioner er historik og medicinkort. Da der i en log over historik godt kan fremstå den samme medicin til den samme patient flere gange, har det været nødvendigt at tilføje en 'Historik' entitet som udover ovennævnte kan holde tidspunktet for fornyelsen af recepten.\\
 Medicinkortet kan 'laves' ud fra recept entiteten givet hvilken patient der ønsker at se sit medicinkort. Det har derfor ikke været nødvendigt at lave en entitet til denne feature.\\
