@@ -4,7 +4,7 @@ Udover en beskrivelse af den tekniske løsning af forbedringsforslagene har vi d
 Endelig indgår også en vurdering af hvilke kvalifikationsbehov ændringerne evt. vil medføre.
 %I dette afsnit ser vi på hvordan visionerne om den samlede forandring, forankres i Regions Sjællands eksisterende version af it-systemet MinSP, dvs. hvordan visionerne skal integreres og anvendes af patienter og sundhedspersonale. \footnote{Professionel it-forundersøgelse, Bødker, Kensing, Simonsen, s. 211} 
 \subsection{Teknologi}
-I dette afsnit har vi i underpunkterne 'Funktion' og 'Brugergrænseflader' benyttet og anvendt diagnostisk \footnote{Bilag 3} til at forstå problemerne vi ønsker løst og ideer til deres løsninger. \\
+I dette afsnit har vi i underpunkterne 'Funktion' og 'Brugergrænseflader' benyttet og anvendt diagnostiske kort \footnote{Bilag 3} til at forstå problemerne vi ønsker løst og ideer til deres løsninger. \\
 %
 % ! ER Diagram over de nye funktionalitere / visioner
 %
@@ -12,7 +12,8 @@ I dette afsnit har vi i underpunkterne 'Funktion' og 'Brugergrænseflader' benyt
 It-platformen for den samlede vision for MinSP er Sundhedsplatformen.
 \\\\
 \textbf{Prioritet 1, Receptfornyelse} \\
-It-systemerne er udover MinSP også Sundhedsplatformen og muligvis apotekernes systemer og FMK (det fælles medicin kort), da der skal være integration i mellem disse systemer.
+It-systemerne er udover MinSP også Sundhedsplatformen og muligvis apotekernes systemer og FMK (det fælles medicin kort), da der skal være integration i mellem disse systemer.\\
+Vi har udviklet en prototype for receptfornyelse der visualisere hvordan en receptfornyelse kan gennemføres.
 \\\\
 \textbf{Prioritet 2, Samling af al information} \\
 %
@@ -45,11 +46,12 @@ Recept skal kun kunne fornys, når sidst udleverede dosis er ved slippe op.
 'Medicinkortet' skal indeholde en liste over ordineret medicin.\\ 
 'Historik' skal indeholde en liste over alle udleveringer af medicin til dato.
 \\ \\
-Vi vurderer, at 'Receptfornyelse' er en kompliceret funktionalitet, da den skal ny-udvikles, og da der ikke er noget eksisterende funktionalitet, der kan genbruges. Funktionaliteten er også kompliceret, fordi sikkerheden skal være høj i forhold til, at der ikke må udleveres for meget medicin, og da det kun er den ordinerede medicin, der må fornys. \\
-Udviklingen af statuslinje, for gangen i receptfornyelsen, vil også være kompliceret, fordi registreringen skal overføres af sundhedspersonalet fra Sundhedsplatformen til MinSP.\\
-Modtagerapotek skal kunne vælges i forhold til bopæl, og det vurdere vi også vil være kompliceret, fordi der skal bruges data omkring hvor alle apoteker i Region Sjælland ligger.\\
+'Receptfornyelse' er en funktionalitet, der skal ny-udvikles, da der ikke er noget eksisterende funktionalitet, der kan genbruges. Sikkerheden skal være høj i forhold til, at der ikke må udleveres for meget medicin, og det kun er den ordinerede medicin, der må fornys. \\
+I statuslinje, for gangen i receptfornyelsen, skal registreringen overføres af sundhedspersonalet fra Sundhedsplatformen til MinSP.\\
+Modtagerapotek skal kunne vælges i forhold til bopæl. Det vil kræve en tabel med data over hvor alle apoteker i Region Sjælland ligger.\\
 Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhold til sidste fornyelse. Hertil skal bruges databaser med oplysninger om om ordineret medicin, historikken for udleveret medicin og receptfornyelser. Vi forudsætter at databaser med disse oplysninger allerede findes, men at der skal laves integration med disse databaser.\\
-I databasen for MinSP skal Patient tabellen udvides til at kunne gemme oplysninger om 'Primær apotek' og 'Sekundær apotek'.
+I databasen for MinSP skal Patient tabellen udvides til at kunne gemme oplysninger om 'Primær apotek' og 'Sekundær apotek'.\\
+På baggrund af overnævnte beskrivelse vurderer vi, at 'Receptfornyelse' er en kompliceret funktionalitet at udvikle.
 \\\\
 \textbf{Prioritet 2, Samling af al information} \\
 Et forslag til at imødekomme visionen om en 'Samling af al information' kunne være, at under hovedmenuen Profil, at tilføje en undermenu 'Information om dine diagnoser'. Under denne undermenu kan der placeres link til f.eks. Patienthåndbogen, Diabetesforeningen og Steno Diabetes Center.
@@ -80,7 +82,8 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\label{fig:Mock-Up}
 \end{figure}
 I 'Vælg modtagerapotek' skal man i en drop-down menu kunne vælge mellem de to apoteker tættest på en.\\
-Bemærk at knappen 'Forny recept' skal være blokkeret i perioden hvor recept ikke må fornys. Der skal udover indformeres om hvornår patienten kan forny sin recept.\\
+Hvis patienten ønsker påmindelse om recept fornyelse, skal patienten sætte hak ved 'Få påmindelse'.\\
+Bemærk at knappen 'Forny recept' skal være blokkeret i perioden hvor recept ikke må fornys. Der skal udover indformeres om hvornår patienten kan forny sin recept, f.eks. med tekst ved siden 'Forny recept'-knappen af som vist i mock-upen.\\
 Når patienten fornyer sin recept skal være en fortrydelses besked: 'Er du sikker på du vil forny din recept?' Hvor man skal kunne vælge 'ja' eller 'nej'. Dette kan evt. laves som en pop-up. \\
 Der er to forslag til måden status for fornyelse kan vises på. Status mulighederne i løsning to er: Bestilt, bestilling modtaget, godkendt og kan afhentes på Apotek.\\
 \begin{figure}[H]
@@ -104,6 +107,7 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\caption{Mock-up for modulet 'Information om dine diagnoser': Hovedmenu, 'Profil'}
 	\label{fig:Mock-Up}
 \end{figure}
+Der er hovedmenuen Profil tilføjet undermenuen 'Information om dine diagnose'.
 \begin{figure}[H]
 	\centering
 	\includegraphics[angle=0, height=0.44\textheight]{Materials/Information.pdf}
