@@ -1,11 +1,12 @@
 \newpage
 \subsection{Showcasing af prototype}
 Vores prototype kan køres med \textit{Flask run} fra kommandolinjen hvis ens 'FLASK\_APP' environment variable er sat til 'prototype.py', og man befinder sig i rod mappen. Vores prototype kan også køres fra roden med kommandoen 'python prototype.py'.\\
-Vores prototype forudsætter at der er sat en database op ved navn 'prototype'.
+Vores prototype forudsætter at der er lavet en database op ved navn 'prototype'. Databasen kan opsættes ved at køre scriptsne \textit{'schema.sql'} og \textit{'schema\_ins.sql'}. Hvis disse scripts bliver benyttet kan prototypen logges på med tre brugere, CPR nummer 5000, 2000 og 1000, som alle har kodeordet 'Hej'.\todo{Remove personal path from 'schema.sql'}
 
 \begin{figure}[h!]
-	\includegraphics[width=\linewidth]{Materials/Prototype/Historik}
-	\caption{Historik for en bruger}
+	\includegraphics[width=0.49\linewidth]{Materials/Prototype/Historik}
+	\includegraphics[width=0.49\linewidth]{Materials/Prototype/Historik2}
+	\caption{tv. ses historikken for brugeren med cprnr. 5000 og th. ses historikken for brugeren med cprnr. 1000}
 \end{figure}
 
 Vores prototype består hovedsagligt af tre funktionaliteter: \textit{Receptfornyelse, Historik} og \textit{Sundhedsdata}. Under \textit{Historik} er det muligt at se alle ens recepter og tidligere recepter, samt information omkring hvornår recepten blev udskrevet, hvornår den udløb og hvilken medicin der blev udskrevet.\\

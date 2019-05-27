@@ -70,14 +70,14 @@
           <div class="logosjov"><a href="#"><img src="{{ url_for('static', filename='images/loginlogo.png') }}"></a></div>
           {% if current_user.is_authenticated %}
           <div class="menu">
-              <li><a href="{{ url_for('Login.historik') }}">Historik</a></li>
-              <li><a href="{{ url_for('Login.meddelelser') }}">Meddelser</a></li>
-              <li><a href="{{ url_for('Login.aftaler') }}">Aftaler</a></li>
-              <li><a href="{{ url_for('Login.sundhedsdata') }}">Sundhedsdata</a></li>
-              <li><a href="{{ url_for('Login.receptfornyelse') }}">Receptfornyelse</a></li>
-              <li><a href="{{ url_for('Login.profil') }}">Profil</a></li>
-              <li><a href="{{ url_for('Login.fahjaelp') }}">Få hjælp</a></li>
-              <a class="nav-item nav-link" style="font-size: 12px; padding:0;" href="{{ url_for('Login.logout') }}">Log ud af minsundhedsplatform.dk</a>
+              <li><a href="{{ url_for('Main.historik') }}">Historik</a></li>
+              <li><a href="{{ url_for('Main.meddelelser') }}">Meddelser</a></li>
+              <li><a href="{{ url_for('Main.aftaler') }}">Aftaler</a></li>
+              <li><a href="{{ url_for('Main.sundhedsdata') }}">Sundhedsdata</a></li>
+              <li><a href="{{ url_for('Main.receptfornyelse') }}">Receptfornyelse</a></li>
+              <li><a href="{{ url_for('Main.profil') }}">Profil</a></li>
+              <li><a href="{{ url_for('Main.fahjaelp') }}">Få hjælp</a></li>
+              <a class="nav-item nav-link" style="font-size: 12px; padding:0;" href="{{ url_for('Main.logout') }}">Log ud af minsundhedsplatform.dk</a>
           </div>
       {% else %}
       {% endif %}
