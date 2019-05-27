@@ -25,12 +25,9 @@ Ligeledes kan 'Diagnose' laves direkte. Denne tabel vil komme til at indeholde a
 \end{equation*}
 Vi har herefter vores 'Recept' entitet. Denne er weak, og henter nøgler fra de fleste andre entiteter. 'Status' attributten vil blive benyttet i overensstemmelse med vores vision om at patienten selv skal kunne følge med i receptfornyelsesprocessen. 'Udstedt' attributten vil blive benyttet af medicinkortet, og vil aldrig ændre sig da den repræsenterer hvornår patienter første gang blev ordineret med medicinen. 'Udløber' attributten vil blive benyttet til at sende reminders til patienterne.\todo{For detaljeret? Nogen grund til at forklare disse attributter?} 
 \begin{equation*}
-	\textrm{Recept}(\textrm{\underline{ApoNavn}, \underline{MedID}, \underline{PatCPR}, \underline{fornyet}, status, udstedt, udløber})
+	\textrm{Recept}(\textrm{\underline{MedNavn}, \underline{MedStyrke}, \underline{PatCPR}, \underline{fornyet}, ApoNavn, status, udstedt, udløber, aktiv})
 \end{equation*}
-Hvis vi skulle lave vores relationer til om til tabeller ville der blive en en masse redundancy da alle på nær en enkelt relation vil allerede være subsets af andre tabeller. Derfor er den eneste relation som bliver lavet om til en tabel 'Behandles for'. Her vil begge nøgler være foreign keys til henholdsvis 'Patient' og 'Dignose'.
+Hvis vi skulle lave vores relationer om til tabeller ville der blive en en masse redundancy da alle på nær en enkelt relation vil allerede være subsets af andre tabeller. Derfor er den eneste relation som bliver lavet om til en tabel 'Behandles for'. Her vil begge nøgler være foreign keys til henholdsvis 'Patient' og 'Dignose'.
 \begin{equation*}
 \textrm{BehandlesFor}(\textrm{\underline{PatCPR}, \underline{Sygdom}})
 \end{equation*}
-
-\subsubsection{Known shortcommings}
-Det er muligt at fornye den samme recept på forskellige apoteker, givet tuplen (\underline{ApoNavn}, \underline{MedID}, \underline{PatCPR}, \underline{fornyet}) vil være unik når apoteket ændres.
