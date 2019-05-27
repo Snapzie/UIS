@@ -1,0 +1,18 @@
+\newpage
+\subsection{Showcasing af prototype}
+Vores prototype kan køres med \textit{Flask run} fra kommandolinjen hvis ens 'FLASK\_APP' environment variable er sat til 'prototype.py', og man befinder sig i rod mappen. Vores prototype kan også køres fra roden med kommandoen 'python prototype.py'.\\
+Vores prototype forudsætter at der er sat en database op ved navn 'prototype'.
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{Materials/Prototype/Historik}
+	\caption{Historik for en bruger}
+\end{figure}
+
+Vores prototype består hovedsagligt af tre funktionaliteter: \textit{Receptfornyelse, Historik} og \textit{Sundhedsdata}. Under \textit{Historik} er det muligt at se alle ens recepter og tidligere recepter, samt information omkring hvornår recepten blev udskrevet, hvornår den udløb og hvilken medicin der blev udskrevet.\\
+Under \textit{Receptfornyelse} kan alle ens aktive recepter ses. Øverst på siden er en processlinje som beskriver hvor langt i 'forløbet' ens medicin er kommet, altså er medicinen først lige bestilt? Har lægen godkendt receptfornyelsen? Kan medicinen afhentes? Denne processlinje understøtter vores vision om at brugeren skal indrages i forløbet, og selv kan se fremskridtene i processen. Nedenunder ses de aktive recepter samt en knap som tillader at fornye recepten. Når brugeren klikker forny ud fra en af sine recepter, så opdateres recepten til ikke længere at være aktiv, og der bliver i stedet lavet en ny recept. I prototypen er de fleste af værdierne i den nye recept hard coded, men dette ville nemt kunne gøres mere realistisk ved at lave om i vores database model.
+\begin{figure}[h!]
+	\includegraphics[width=0.49\linewidth]{Materials/Prototype/Receptfornyelse}
+	\includegraphics[width=0.49\linewidth]{Materials/Prototype/ReceptfornyelseFornyet}
+	\caption{tv. ses recepterne før fornyelse. th. ses recepterne efter 'Medicine 3' fornyelse}
+\end{figure}
+\todo{Medicin kort?}
