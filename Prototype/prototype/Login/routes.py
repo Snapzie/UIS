@@ -2,14 +2,21 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from prototype import conn
 from prototype.forms import LoginForm
 from flask_login import login_user, current_user, logout_user
-from prototype.models import select_Patient, get_Prescriptions, get_History, get_Diagnoses
+from prototype.models import select_Patient, get_History, get_Diagnoses, get_Active_Prescriptions, insert_New_Renewed_Prescription, update_Active_Prescription
 
 Login = Blueprint('Login', __name__)
 
 @Login.route("/receptfornyelse")
 def receptfornyelse():
-    p = get_Prescriptions(current_user.get_id(), conn)
+    p = get_Active_Prescriptions(current_user.get_id(), conn)
     return render_template('receptfornyelse.html', percs=p)
+
+@Login.route('/renew/<med_name>/<med_conc>')
+def renew(med_name, med_conc):
+    insert_New_Renewed_Prescription(current_user.get_id(), med_name, med_conc, conn)
+    p = get_Active_Prescriptions(current_user.get_id(), conn)
+    flash('Receptfornyelse godkendt.', 'success')
+    return redirect(url_for('.receptfornyelse', percs=p))
 
 @Login.route("/meddelser")
 def meddelelser():

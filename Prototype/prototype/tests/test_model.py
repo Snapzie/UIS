@@ -1,5 +1,5 @@
 import unittest
-from prototype.models import select_Patient, get_Prescriptions, get_History, get_Diagnoses
+from prototype.models import select_Patient, get_Prescriptions, get_History, get_Diagnoses, get_Active_Prescriptions, update_Active_Prescription, insert_New_Renewed_Prescription
 import psycopg2
 import datetime
 
@@ -35,12 +35,12 @@ class MyTestCase(unittest.TestCase):
         u = select_Patient(0, conn)
         self.assertTrue(u is None)
 
-    def test_get_prescriptions(self):
-        p = get_Prescriptions(5000, conn)
-        self.assertEqual(len(p), 3)
+    def test_get_active_prescriptions(self):
+        p = get_Active_Prescriptions(5000, conn)
+        self.assertEqual(len(p), 1)
 
-    def test_get_prescriptions_no_prescription(self):
-        p = get_Prescriptions(2000, conn)
+    def test_get_active_prescriptions_no_prescription(self):
+        p = get_Active_Prescriptions(2000, conn)
         self.assertEqual(len(p), 0)
 
     def test_get_diagnoses(self):
@@ -60,18 +60,37 @@ class MyTestCase(unittest.TestCase):
     def test_get_history(self):
         h = get_History(5000, conn)
         self.assertEqual(len(h), 3)
-        self.assertTrue(h[0].name == 'Medicine 1')
-        self.assertTrue(h[1].name == 'Medicine 2')
-        self.assertTrue(h[2].name == 'Medicine 3')
-        self.assertTrue(h[0].concentration == '1M')
-        self.assertTrue(h[1].concentration == '2M')
-        self.assertTrue(h[2].concentration == '2M')
+        self.assertTrue(h[0].medicine_name == 'Medicine 1')
+        self.assertTrue(h[1].medicine_name == 'Medicine 2')
+        self.assertTrue(h[2].medicine_name == 'Medicine 3')
+        self.assertTrue(h[0].medicine_concentration == '1M')
+        self.assertTrue(h[1].medicine_concentration == '2M')
+        self.assertTrue(h[2].medicine_concentration == '2M')
         self.assertTrue(h[0].illness == 'Diabetes')
         self.assertTrue(h[1].illness == 'Diabetes')
         self.assertTrue(h[2].illness == 'Diabetes')
         self.assertTrue(str(h[0].renewal) == "2015-12-17")
         self.assertTrue(str(h[1].renewal) == "2016-12-17")
         self.assertTrue(str(h[2].renewal) == "2017-12-17")
+
+    def test_update_active_prescription(self):
+        p = get_Active_Prescriptions(5000, conn)
+        self.assertEqual(len(p), 1)
+        update_Active_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, conn)
+        p = get_Active_Prescriptions(5000, conn)
+        self.assertEqual(len(p), 0)
+
+    def test_insert_renewed_prescription(self):
+        p = get_Active_Prescriptions(5000, conn)
+        self.assertEqual(len(p), 1)
+        insert_New_Renewed_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, conn)
+        q = get_Active_Prescriptions(5000, conn)
+        #insert_New_Renewed_Prescription calls update_Active_Prescription, thus the number
+        # of active prescriptions stays the same
+        self.assertEqual(len(q), 1)
+        self.assertTrue(q[0].medicine_name == p[0].medicine_name
+                        and q[0].medicine_concentration == p[0].medicine_concentration
+                        and q[0].patient_CPR == 5000)
 
 
 
