@@ -11,25 +11,28 @@
           <ul class="progressbar">
               {% if p.status == 'Ordered' %}
                 <li class="active">Dato bestilt</li>
-              {% else %}
-                <li>Dato bestilt</li>
-              {% endif %}
-
-              {% if p.status == 'Recieved' %}
-                <li class="active">Modtaget af sekretær</li>
-              {% else %}
                 <li>Modtaget af sekretær</li>
-              {% endif %}
-
-              {% if p.status == 'Approved' %}
-                <li class="active">Godkendt af læge</li>
-              {% else %}
                 <li>Godkendt af læge</li>
-              {% endif %}
-
-              {% if p.status == 'Ready' %}
+                <li>Klar til afhentning</li>
+              {% elif p.status == 'Recieved' %}
+                <li class="active">Dato bestilt</li>
+                <li class="active">Modtaget af sekretær</li>
+                <li>Godkendt af læge</li>
+                <li>Klar til afhentning</li>
+              {% elif p.status == 'Approved' %}
+                <li class="active">Dato bestilt</li>
+                <li class="active">Modtaget af sekretær</li>
+                <li class="active">Godkendt af læge</li>
+                <li>Klar til afhentning</li>
+              {% elif p.status == 'Ready' %}
+                <li class="active">Dato bestilt</li>
+                <li class="active">Modtaget af sekretær</li>
+                <li class="active">Godkendt af læge</li>
                 <li class="active">Klar til afhentning</li>
               {% else %}
+                <li>Dato bestilt</li>
+                <li>Modtaget af sekretær</li>
+                <li>Godkendt af læge</li>
                 <li>Klar til afhentning</li>
               {% endif %}
           </ul>
@@ -49,8 +52,9 @@
       </div>
       <div class="forny_knap">
         <div class="simple-button">
-            <vue-confirmation-button :messages="appliedMessages" ref="confirmationButton" v-on:confirmation-success="finished()">
-            </vue-confirmation-button>
+            <a href="{{ url_for('.renew', med_name=p.medicine_name, med_conc=p.medicine_concentration) }}" class="btn btn-primary">Forny</a>
+            <!-- <vue-confirmation-button :messages="appliedMessages" ref="confirmationButton" v-on:confirmation-success="finished()">
+            </vue-confirmation-button> -->
         </div>
       </div>
   </div>

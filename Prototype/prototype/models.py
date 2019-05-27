@@ -33,6 +33,7 @@ class Prescription(tuple):
         self.prescribed = user_data[6]
         self.expiration = user_data[7]
         self.illness = user_data[8]
+        self.active = user_data[9]
 
 class History(tuple):
     def __init__(self, user_data):
@@ -70,6 +71,20 @@ def get_Prescriptions(CPR_number, conn):
     cur.close()
     return prescriptions
 
+def get_Active_Prescriptions(CPR_number, conn):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Prescription
+    WHERE patient_CPR = %s
+    AND active = 'Active'
+    """
+    cur.execute(sql, (CPR_number,))
+    prescriptions = []
+    for row in cur.fetchall():
+        prescriptions.append(Prescription(row))
+    cur.close()
+    return prescriptions
+
 def get_History(CPR_number, conn):
     p = get_Prescriptions(CPR_number, conn)
     history = []
@@ -89,3 +104,26 @@ def get_Diagnoses(CPR_number, conn):
         diagnoses.append(In_treatment_for(row))
     cur.close()
     return diagnoses
+
+def update_Active_Prescription(CPR_number, med_name, med_conc, conn):
+    cur = conn.cursor()
+    sql = """
+        UPDATE Prescription
+        SET active = 'Inactive'
+        WHERE medicine_name = %s AND medicine_concentration = %s AND patient_CPR = %s
+    """
+    cur.execute(sql, (med_name, med_conc, CPR_number))
+    #cur.commit()
+    cur.close()
+
+# ======= Describe hard coded values in report =======
+def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, conn):
+    update_Active_Prescription(CPR_number, med_name, med_conc, conn)
+    cur = conn.cursor()
+    sql = """
+        INSERT INTO Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness, active)
+        VALUES('Pharmacy 1', %s, %s, %s, current_date, 'Ordered', current_date, current_date, 'Diabetes', 'Active')
+    """
+    cur.execute(sql, (med_name, med_conc, CPR_number))
+    #cur.commit()
+    cur.close()
