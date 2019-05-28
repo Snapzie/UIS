@@ -4,14 +4,14 @@
     
     <h1 style="border-bottom: 1px solid #000; padding-bottom: 15px; color: #02376a; font-size: 36px;">Medicinkort</h1>
 
-    {% for p in prescription %}
+    {% for j in joined %}
     <div class="modul">
         <ul style="float:left; text-align:left;">
-            <li>Ordineret: {{ p.prescribed }}</li>
-            <li>Medicin: {{ p.medicine_name }}</li>
-            <li>Medicin styrke: {{ p.medicine_concentration }}</li>
-            <li>Behandling for: {{ p.illness }}</li>
-            <li>Link til patienthånbogen: {{ h.illness }}</li>
+            <li>Ordineret: {{ j.prescribed }}</li>
+            <li>Medicin: {{ j.medicine_name }}</li>
+            <li>Medicin styrke: {{ j.medicine_concentration }}</li>
+            <li>Behandling for: {{ j.illness }}</li>
+            <li>Link til <a href="{{ j.link }}">patienthånbogen:</a></li>
         </ul>
     </div>
     {% endfor %}

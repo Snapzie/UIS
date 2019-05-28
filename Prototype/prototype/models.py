@@ -47,6 +47,14 @@ class In_treatment_for(tuple):
         self.patient_CPR = user_data[0]
         self.illness = user_data[1]
 
+class Joined_prescription_diagnose(tuple):
+    def __init__(self, user_data):
+        self.prescribed = user_data[0]
+        self.medicine_name = user_data[1]
+        self.medicine_concentration = user_data[2]
+        self.illness = user_data[3]
+        self.link = user_data[4]
+
 def select_Patient(CPR_number, conn):
     cur = conn.cursor()
     sql = """
@@ -113,7 +121,6 @@ def update_Active_Prescription(CPR_number, med_name, med_conc, conn):
         WHERE medicine_name = %s AND medicine_concentration = %s AND patient_CPR = %s
     """
     cur.execute(sql, (med_name, med_conc, CPR_number))
-    cur.commit()
     cur.close()
 
 # ======= Describe hard coded values in report =======
@@ -125,5 +132,20 @@ def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, conn):
         VALUES('Pharmacy 1', %s, %s, %s, current_date, 'Ordered', current_date, current_date, 'Diabetes', 'Active')
     """
     cur.execute(sql, (med_name, med_conc, CPR_number))
-    cur.commit()
     cur.close()
+
+def join_prescription_diagnose(CPR_number, conn):
+    cur = conn.cursor()
+    sql = """
+        SELECT prescribed, medicine_name, medicine_concentration, prescription.illness, link
+        FROM prescription
+        INNER JOIN diagnose
+        ON prescription.illness = diagnose.illness
+        WHERE prescription.patient_CPR = %s
+    """
+    cur.execute(sql, (CPR_number,))
+    joined = []
+    for row in cur.fetchall():
+        joined.append(Joined_prescription_diagnose(row))
+    cur.close()
+    return joined
