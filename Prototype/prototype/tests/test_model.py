@@ -95,20 +95,11 @@ class MyTestCase(unittest.TestCase):
 
     def test_join_prescriptions_diagnoses(self):
         j = join_prescription_diagnose(5000, conn)
-        self.assertEqual(len(j), 3)
-        self.assertTrue(j[0].medicine_name == 'Medicine 1')
-        self.assertTrue(j[1].medicine_name == 'Medicine 2')
-        self.assertTrue(j[2].medicine_name == 'Medicine 3')
-        self.assertTrue(j[0].medicine_concentration == '1M')
-        self.assertTrue(j[1].medicine_concentration == '2M')
-        self.assertTrue(j[2].medicine_concentration == '2M')
+        self.assertEqual(len(j), 1)
+        self.assertTrue(j[0].medicine_name == 'Medicine 3')
+        self.assertTrue(j[0].medicine_concentration == '2M')
         self.assertTrue(j[0].illness == 'Diabetes')
-        self.assertTrue(j[1].illness == 'Diabetes')
-        self.assertTrue(j[2].illness == 'Diabetes')
         self.assertTrue(j[0].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
-        self.assertTrue(j[1].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
-        self.assertTrue(j[2].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
-
 
 
 if __name__ == '__main__':

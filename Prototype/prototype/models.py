@@ -142,6 +142,7 @@ def join_prescription_diagnose(CPR_number, conn):
         INNER JOIN diagnose
         ON prescription.illness = diagnose.illness
         WHERE prescription.patient_CPR = %s
+        AND prescription.active = 'Active'
     """
     cur.execute(sql, (CPR_number,))
     joined = []
