@@ -113,6 +113,7 @@ def update_Active_Prescription(CPR_number, med_name, med_conc, conn):
         WHERE medicine_name = %s AND medicine_concentration = %s AND patient_CPR = %s
     """
     cur.execute(sql, (med_name, med_conc, CPR_number))
+    cur.commit()
     cur.close()
 
 # ======= Describe hard coded values in report =======
@@ -124,4 +125,5 @@ def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, conn):
         VALUES('Pharmacy 1', %s, %s, %s, current_date, 'Ordered', current_date, current_date, 'Diabetes', 'Active')
     """
     cur.execute(sql, (med_name, med_conc, CPR_number))
+    cur.commit()
     cur.close()
