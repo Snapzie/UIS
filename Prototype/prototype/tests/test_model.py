@@ -1,5 +1,6 @@
 import unittest
-from prototype.models import select_Patient, get_Prescriptions, get_History, get_Diagnoses, get_Active_Prescriptions, update_Active_Prescription, insert_New_Renewed_Prescription
+from prototype.models import select_Patient, get_Prescriptions, get_History, get_Diagnoses, \
+    get_Active_Prescriptions, update_Active_Prescription, insert_New_Renewed_Prescription, join_prescription_diagnose
 import psycopg2
 import datetime
 
@@ -91,6 +92,22 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(q[0].medicine_name == p[0].medicine_name
                         and q[0].medicine_concentration == p[0].medicine_concentration
                         and q[0].patient_CPR == 5000)
+
+    def test_join_prescriptions_diagnoses(self):
+        j = join_prescription_diagnose(5000, conn)
+        self.assertEqual(len(j), 3)
+        self.assertTrue(j[0].medicine_name == 'Medicine 1')
+        self.assertTrue(j[1].medicine_name == 'Medicine 2')
+        self.assertTrue(j[2].medicine_name == 'Medicine 3')
+        self.assertTrue(j[0].medicine_concentration == '1M')
+        self.assertTrue(j[1].medicine_concentration == '2M')
+        self.assertTrue(j[2].medicine_concentration == '2M')
+        self.assertTrue(j[0].illness == 'Diabetes')
+        self.assertTrue(j[1].illness == 'Diabetes')
+        self.assertTrue(j[2].illness == 'Diabetes')
+        self.assertTrue(j[0].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
+        self.assertTrue(j[1].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
+        self.assertTrue(j[2].link == 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes')
 
 
 
