@@ -2,7 +2,8 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from prototype import conn
 from prototype.Main.forms import LoginForm
 from flask_login import login_user, current_user, logout_user
-from prototype.models import select_Patient, get_History, get_Diagnoses, get_Active_Prescriptions, insert_New_Renewed_Prescription
+from prototype.models import select_Patient, get_History, get_Diagnoses, get_Active_Prescriptions, \
+    insert_New_Renewed_Prescription, join_prescription_diagnose
 
 Main = Blueprint('Main', __name__)
 
@@ -30,8 +31,8 @@ def sundhedsdata():
 
 @Main.route("/medicinkort")
 def medicinkort():
-    p = get_Active_Prescriptions(current_user.get_id(), conn)
-    return render_template('medicinkort.html', prescriptions=p)
+    j = join_prescription_diagnose(current_user.get_id(), conn)
+    return render_template('medicinkort.html', joined=j)
 
 @Main.route("/")
 @Main.route("/profil")
