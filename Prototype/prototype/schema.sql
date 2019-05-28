@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS Patients(
 );
 
 CREATE TABLE IF NOT EXISTS Diagnose(
-    illness text PRIMARY KEY
+    illness text PRIMARY KEY,
+    link text
 );
 
 CREATE TABLE IF NOT EXISTS Pharmacy(

@@ -3,7 +3,7 @@ INSERT INTO public.Patients(CPR_number, password) VALUES (1000, 'Hej');
 INSERT INTO public.Patients(CPR_number, password) VALUES (2000, 'Hej');
 INSERT INTO public.Patients(CPR_number, password) VALUES (5000, 'Hej');
 -- Diagnose
-INSERT INTO public.Diagnose(illness) VALUES ('Diabetes');
+INSERT INTO public.Diagnose(illness, link) VALUES ('Diabetes', 'https://www.sundhed.dk/borger/patienthaandbogen/soeg/?SearchTerm=Diabetes');
 -- In treatment for
 INSERT INTO public.In_treatment_for(patient_CPR, illness) VALUES (1000, 'Diabetes');
 INSERT INTO public.In_treatment_for(patient_CPR, illness) VALUES (5000, 'Diabetes');

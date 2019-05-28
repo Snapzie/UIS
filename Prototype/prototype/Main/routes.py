@@ -18,14 +18,6 @@ def renew(med_name, med_conc):
     flash('Receptfornyelse godkendt.', 'success')
     return redirect(url_for('.receptfornyelse', percs=p))
 
-@Main.route("/meddelser")
-def meddelelser():
-    return render_template('meddelelser.html')
-
-@Main.route("/aftaler")
-def aftaler():
-    return render_template('aftaler.html')
-
 @Main.route("/historik")
 def historik():
     h = get_History(current_user.get_id(), conn)
@@ -36,9 +28,10 @@ def sundhedsdata():
     d = get_Diagnoses(current_user.get_id(), conn)
     return render_template('sundhedsdata.html', diagnoses=d)
 
-@Main.route("/fahjaelp")
-def fahjaelp():
-    return render_template('fahjaelp.html')
+@Main.route("/medicinkort")
+def medicinkort():
+    p = get_Active_Prescriptions(current_user.get_id(), conn)
+    return render_template('medicinkort.html', prescriptions=p)
 
 @Main.route("/")
 @Main.route("/profil")
