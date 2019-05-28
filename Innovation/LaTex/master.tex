@@ -10,91 +10,54 @@
 
 % Pakker til skrifttyper, tekst osv.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage[utf8]{inputenc}  % Implementere Unicode                        %
-    \usepackage[T1]{fontenc}     % Unicode skrifttype fx. é skrives som 1 tegn %
-    \usepackage[danish]{babel}   % Dansk Ordbog                                %
-    \usepackage{microtype}       % Forbedre linjeombrydningen                  %
-    %\usepackage{libertine}       % Skrifttype                                  %
+\usepackage[utf8]{inputenc}  % Implementere Unicode                        %
+\usepackage[T1]{fontenc}     % Unicode skrifttype fx. é skrives som 1 tegn %
+\usepackage[danish]{babel}   % Dansk Ordbog                                %
+\usepackage{microtype}       % Forbedre linjeombrydningen                  %
+%\usepackage{libertine}       % Skrifttype                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Pakker til matematik og kode.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{mathtools}       % Udvidelse til amsmath pakken                %
-    \usepackage{amsthm}          % Pakke til bevisførelse                      %
-    \usepackage{amssymb}         % Extra matematiske symboler                  %				
-    \usepackage{mychemistry}												   %
-    \usepackage[version=3]{mhchem}											   %
-    \usepackage{wrapfig}													   %
-    \usepackage{siunitx}	
-    \usepackage{anyfontsize}
-    \usepackage{url}
-    \usepackage{ragged2e}
-    \usepackage{algorithm2e}
-    \usepackage[final]{pdfpages}
-    \usepackage{listings}
-    \usepackage{tikz}
-    \usepackage{multirow}
-    \usepackage{makecell}
-    \usepackage{fourier} 
-    \usepackage{array}
-    \usepackage{todonotes}
-    \usetikzlibrary{arrows,shapes}
-	
-		\usepackage{listings}
-	\usepackage{color}
-	\definecolor{dkgreen}{rgb}{0,0.6,0}
-	\definecolor{gray}{rgb}{0.5,0.5,0.5}
-	\definecolor{mauve}{rgb}{0.58,0,0.82}
-	
-	\lstdefinelanguage{FSharp}%
-{morekeywords={let, new, match, with, rec, open, module, namespace, type, of, member, % 
-and, for, while, true, false, in, do, begin, end, fun, function, return, yield, try, %
-mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit, finally },
-  otherkeywords={ let!, return!, do!, yield!, use!, var, from, select, where, order, by },
-  keywordstyle=\color{bluekeywords},
-  sensitive=true,
-  basicstyle=\ttfamily,
-	breaklines=true,
-  xleftmargin=\parindent,
-  aboveskip=\bigskipamount,
-	tabsize=4,
-  morecomment=[l][\color{dkgreen}]{///},
-  morecomment=[l][\color{dkgreen}]{//},
-  morecomment=[s][\color{dkgreen}]{{(*}{*)}},
-  morestring=[b]",
-  showstringspaces=false,
-  literate={`}{\`}1,
-  stringstyle=\color{redstrings},
-}
-	
-	\lstset{frame=tb,
-  	language=FSharp,			%CHANGE LANGUAGE
-  	aboveskip=3mm,
-  	belowskip=3mm,
-  	showstringspaces=false,
-  	columns=flexible,
-  	basicstyle={\small\ttfamily},
-  	numbers=none,
-  	numberstyle=\tiny\color{gray},
-  	keywordstyle=\color{blue},
-  	commentstyle=\color{dkgreen},
-  	stringstyle=\color{mauve},
-  	breaklines=true,
-  	breakatwhitespace=true,
-  	tabsize=3
-	}
-												   %
+\usepackage{mathtools}       % Udvidelse til amsmath pakken                %
+\usepackage{amsthm}          % Pakke til bevisførelse                      %
+\usepackage{amssymb}         % Extra matematiske symboler                  %				
+\usepackage{mychemistry}												   %
+\usepackage[version=3]{mhchem}											   %
+\usepackage{wrapfig}													   %
+\usepackage{siunitx}	
+\usepackage{anyfontsize}
+\usepackage{url}
+\usepackage{ragged2e}
+\usepackage{algorithm2e}
+\usepackage[final]{pdfpages}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fourier} 
+\usepackage{array}
+\usepackage{todonotes}
+\usetikzlibrary{arrows,shapes}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Pakker til layout.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{fancyhdr}            % Gør det muligt at bruge sidehoveder     %
-    \usepackage{graphicx}            % Mulighed for bl.a. \includegraphics     %
-    \usepackage{colortbl}            % Hvis man vil farvelægge sine tabeller   %
-    \usepackage{array}               % Gør miljøerne array og tabular bedre    %
-    \usepackage{parskip}             % Første paragraf i afsnit indrykkes ikke %
-    \usepackage{titlesec}            % Tilpassing af afstand mellem sektioner  %
-    \usepackage[lastpage,user]{zref} % Side x af y                             %
+\usepackage{fancyhdr}            % Gør det muligt at bruge sidehoveder     %
+\usepackage{graphicx}            % Mulighed for bl.a. \includegraphics     %
+\usepackage{colortbl}            % Hvis man vil farvelægge sine tabeller   %
+\usepackage{array}               % Gør miljøerne array og tabular bedre    %
+\usepackage{parskip}             % Første paragraf i afsnit indrykkes ikke %
+\usepackage{titlesec}            % Tilpassing af afstand mellem sektioner  %
+\usepackage[lastpage,user]{zref} % Side x af y                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -110,9 +73,10 @@ mutable, if, then, else, cloud, async, static, use, abstract, interface, inherit
 
 % Mindsker afstanden mellem sektioner
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}      %
-\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}   %
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}      %
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}   %
 \titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 1pt minus 3pt}%
+%\titlefontsize
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%
