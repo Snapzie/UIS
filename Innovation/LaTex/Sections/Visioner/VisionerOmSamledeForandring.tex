@@ -39,11 +39,11 @@ I dette afsnit har vi i underpunkterne 'Funktion' og 'Brugergrænseflader' benyt
 \subsubsection{It-systemer og it-platform}
 It-platformen for den samlede vision for MinSP er Sundhedsplatformen.
 \\\\
-\textbf{Prioritet 1, Receptfornyelse} \\
+\textbf{Receptfornyelse} \\
 It-systemerne er udover MinSP også Sundhedsplatformen og muligvis apotekernes systemer og FMK (det fælles medicin kort), da der skal være integration i mellem disse systemer.\\
 Vi har udviklet en prototype for receptfornyelse der visualisere hvordan en receptfornyelse kan gennemføres.
 \\\\
-\textbf{Prioritet 2, Samling af al information} \\
+\textbf{Samling af al information} \\
 %
 % ? - Anders Lassen: "Læring og videnscenter. Der er allerede patienthåndbogen Jeg tror det er out-of-scope":
 %
@@ -56,11 +56,11 @@ Endvidere kan et link til 'Steno Diabetes Center' give video-information omkring
 På siden er der også information om blandt andet det at være ny med diabetes, til gravide med diabetes, hjælp til at forstå tal, madopskrifter og meget meget mere. 
 Disse 'standardløsninger' kan være en måde til at løse funktionaliteten 'Samling af al information', og dermed undgås en dyr løsning, hvor hospitalernes sundhedspersonale skal vedligeholde egen udviklede informationssider på MinSP.
 \\\\
-\textbf{Prioritet 3, Uniforme Prøvesvar} \\
+\textbf{Uniforme Prøvesvar} \\
 It-systemerne er udover MinSP også Sundhedsplatformen og FMK, da der skal være integration imellem disse systemer.
 \subsubsection{Funktion}
 % ? - Indenholde: 'Liste over de enkle it-systemers funktioner'
-\textbf{Prioritet 1, Receptfornyelse}\\
+\textbf{Receptfornyelse}\\
 Receptfornyelse er en funktionalitet, der skal ny-udvikles, da visionen er, at det skal være integrere i MinSP og Sundhedsplatformen. Kravet til funktionaliteten skal være, at patienter i MinSP selv kan aktivere fornyelse af en eller flere recepter for deres ordinerede medicin. 
 \\
 Receptfornyelsen skal være synlig og skal derfor placeres som en hovedmenu øverst på MinSP. Undermenuen til hovedmenuen 'Receptfornyelse' skal indeholde: 'Forny recept', 'Medicin kort' og 'Historik'.
@@ -79,10 +79,10 @@ Påmindelse vil kræve, at der beregnes en dato for fornyelse af recept i forhol
 I databasen for MinSP skal Patienttabellen udvides til at kunne gemme oplysninger om 'Primær apotek' og 'Sekundær apotek'.\\
 På baggrund af overnævnte beskrivelse vurderer vi, at 'Receptfornyelse' er en kompliceret funktionalitet at udvikle.
 \\\\
-\textbf{Prioritet 2, Samling af al information} \\
+\textbf{Samling af al information} \\
 Et forslag til at imødekomme visionen om en 'Samling af al information' kunne være, at under hovedmenuen Profil ville en undermenu 'Information om dine diagnoser' blive tilføjet. Under denne undermenu kan der placeres link til f.eks. Patienthåndbogen, Diabetesforeningen og Steno Diabetes Center.
 \\\\ 
-\textbf{Prioritet 3, Uniforme Prøvesvar} \\
+\textbf{Uniforme Prøvesvar} \\
 Denne funktionalitet vil kunne løses ved, at man til hvert enkelt prøvesvar knytter en forklaring af prøve-typen på dansk. Der skal her udover angives, hvor prøven er taget (navn på hospital, læge eller laboratorie).\\
 Prøvesvarene skal holdes adskilt pr. diagnoses, hvis patienten har flere diagnoser.\\
 I databasen for MinSP skal tabel med prøvesvar udvides til at kunne gemme forklarende tekst på dansk, om hvad prøven viser, navn på hospital / læge / laboratori, samt hvor prøven er taget. Derfor skal der også oprettes en tabel med hospitals- / læge- / laboratorie navne, som de pågældende navne kan hentes fra.\\ 
@@ -91,7 +91,7 @@ For at kunne holde prøvesvar adskilt pr. diagnose, skal tabellen med prøvesvar
 \subsubsection{Brugergrænseflader} % Krav til Brugergrænseflader
 Brugergrænsefladerne skal designes så de overholder GUI-guidelines for god interaktionsdesign. %  Benyon s. 88 
 \\\\
-\textbf{Prioritet 1, Receptfornyelse} \\
+\textbf{Receptfornyelse} \\
 Implementering af receptfornyelses funktionaliteten vil kræve integration med Sundhedsplatformens medicinmodul og apotekerenes systemer. 
 Der skal være en ny grænseflade mellem MinSP og FMK.\\\\
 Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's:\\
@@ -101,6 +101,7 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\caption{Mock-up for modulet 'Receptfornyelse': Hovedmenuen}
 	\label{fig:Mock-Up1}
 \end{figure}
+Mock-up'en til Hovedmenuen med et 'Receptfornyelses-menu' er lavet med inspiration fra vores scenarier.\footnote{Bilag 5}
 \begin{figure}[H]
 	\centering
 	\includegraphics[angle=0, width=\linewidth]{Materials/FornyRecept.pdf}
@@ -125,7 +126,7 @@ Der er to forslag til måden, hvorpå status for fornyelse kan vises. Statusmuli
 	\label{fig:Mock-Up4}
 \end{figure}
 % ? - Scenarios
-\textbf{Prioritet 2, Samling af al information} \\
+\textbf{Samling af al information} \\
 Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's:\\
 \begin{figure}[H]
 	\centering
@@ -133,14 +134,15 @@ Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's
 	\caption{Mock-up for modulet 'Information om dine diagnoser': Hovedmenu, 'Profil'}
 	\label{fig:Mock-Up5}
 \end{figure}
-Der er hovedmenuen Profil tilføjet undermenuen 'Information om dine diagnose'.
+Der er i hovedmenuen Profil tilføjet undermenuen 'Information om dine diagnoser'.
 \begin{figure}[H]
 	\centering
-	\includegraphics[angle=0, width=\linewidth]{Materials/Information.pdf}
+	\includegraphics[angle=0, width=\linewidth]{Materials/Info2.pdf}
 	\caption{Mock-up for modulet 'Information om dine diagnoser': Undermenu}
 	\label{fig:Mock-Up6}
 \end{figure}
-\textbf{Prioritet 3, Uniforme Prøvesvar} \\
+Her kan patienten søge generel infomation om sin/sine diagnoser via links til relevante og anerkendte hjemmesider, der er udarbejdet af sundhedsfagligt personale.\\\\
+\textbf{Uniforme Prøvesvar} \\
 Forslag til brugergrænseflade for patienten fremgår af nedenstående Mock-up's:\\
 \begin{figure}[H]
 	\centering
@@ -158,26 +160,26 @@ Vi ville derfor have haft et bedre grundlag for at vurdere fordele og ulemper fo
 Vi har derfor ikke haft den viden, som MUST-metodens princip om, at arbejdspraksis skal opleves ellers kunne have givet os. 
 \\
 \\
-\textbf{Prioritet 1, Receptfornyelse} \\
+\textbf{Receptfornyelse} \\
 En automatisk receptfornyelse vil muligvis ændre arbejdsgangen for sundhedspersonalet. \\ 
 Lægen skal fortsat stadigvæk tjekke, at ordineringen er korrekt i forhold til journalen, men at læge-sekretæren slipper for at skrive besked tilbage til patienten, da patienten nu selv kan se forløbet i statuslinjen.
 %
 \\\\
-\textbf{Prioritet 2, Samling af al information} \\
+\textbf{Samling af al information} \\
 Hvis funktionaliteten implementeres via links som foreslået, vil der ikke være nogen ændringer til arbejdsgange og arbejdets organisering. \\
 Hvis ikke funktionaliteten implementeres via links, men som en ny-udviklet informationside, er det sundhedspersonalet der skal skrive alt informationen/optage videoer mv., og siden vil skulle vedligeholdes af sundhedspersonalet, så det ville være en ekstra opgave, som sundhedspersonalet (læger, diætister og sygeplejeskær m.fl.) herved bliver pålagt.
 \\\\
-\textbf{Prioritet 3, Uniforme Prøvesvar} \\
+\textbf{Uniforme Prøvesvar} \\
 Implementering af denne funktionalitet vil give ekstra arbejde for lægesekretæren eller laboratorie medarbejdere i forhold til indrapporteringen af prøvesvar, da der vil være flere informationer (navn på sted hvor prøven er taget og navn på diagnose), der skal indtastes, end med nuværende løsning. Der vil forinden være ekstra arbejde for lægen, da det er denne, der skal informere laboratorie-personale eller lægesekretær om, hvilken diagnose, de enkle prøvesvar vedrører.\\
 Der skal tages stilling til hvor i organisationen indrapporteringen skal foretages. Desuden skal der nedsættes et udvalg enten på regionalt eller på landsplan som skal udarbejde standardsvarene til de uniforme prøvesvar.
 \subsection{Kvalifikationsbehov}
-\textbf{Prioritet 1, Receptfornyelse} \\
+\textbf{Receptfornyelse} \\
 Receptfornyelses funktionaliteten vil ikke kræve nogen større oplæring af sundhedspersonalet, hvis de er rutinerede brugere af Sundhedsplatformen, men blot en introduktion til, hvordan den nye funktionalitet fungerer.
 \\\\
-\textbf{Prioritet 2, Samling af al information} \\
+\textbf{Samling af al information} \\
 Hvis funktionaliteten implementeres via links, vil det ikke kræve nogen oplæring af sundhedspersonalet.
 \\\\
-\textbf{Prioritet 3, Uniforme Prøvesvar} \\
+\textbf{Uniforme Prøvesvar} \\
 Vores vurdering er, at ændringerne ikke kræver ekstra kvalifikationer, da ændringen for sundhedspersonalet består i data-indtastning, som vi forudsætter at de allerede er bekendt med.
 \\\\
 Da vi ikke har haft mulighed for at foretage virksomhedsbesøg, har vi ikke haft kontakt med sundhedspersonalet i nogen af Region Sjællands hospitaler. Vi har derfor ikke haft mulighed for løbende at kunne informere personalet og ledelse om vores visioner til forbedring af MinSP som vi arbejdet med i dette forundersøgelses projekt. Vi har derfor ikke kunne opfylde MUST-metodens princip om forankring, hvor man fra forundersøgelsen første fase skal skabe forståelse og opbakning ved at informere alle interessenter der senere vil blive berørt af forandringerne. Det gælder både ledelse, sundhedspersonale og dem, der skal være ansvarlige for den tekniske og organisatoriske implementering.
