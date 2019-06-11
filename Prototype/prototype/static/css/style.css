@@ -35,6 +35,12 @@ a:hover{
   padding: 1.2%;
 }
 
+.menu_image{
+  margin: 0 auto;
+  height:25px;
+  display: block;
+}
+
 .content_wrap{
   margin: 0 auto;
   background: #fff;
