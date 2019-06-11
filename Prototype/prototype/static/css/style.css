@@ -138,6 +138,9 @@ a:hover{
   font-size: 14px;
 }
 
+.dropdown-menu {
+  text-align: right!important;
+}
 
 
 

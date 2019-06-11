@@ -7,6 +7,7 @@ from prototype.models import select_Patient, get_History, get_Diagnoses, get_Act
 
 Main = Blueprint('Main', __name__)
 
+@Main.route("/")
 @Main.route("/receptfornyelse")
 def receptfornyelse():
     p = get_Active_Prescriptions(current_user.get_id(), conn)
@@ -24,27 +25,15 @@ def historik():
     h = get_History(current_user.get_id(), conn)
     return render_template('historik.html', history=h)
 
-@Main.route("/sundhedsdata")
-def sundhedsdata():
-    d = get_Diagnoses(current_user.get_id(), conn)
-    return render_template('sundhedsdata.html', diagnoses=d)
-
 @Main.route("/medicinkort")
 def medicinkort():
     j = join_prescription_diagnose(current_user.get_id(), conn)
     return render_template('medicinkort.html', joined=j)
 
-@Main.route("/")
-@Main.route("/profil")
-def profil():
-    if not current_user.is_authenticated:
-        return redirect(url_for('Main.login'))
-    return render_template('profil.html')
-
 @Main.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('Main.profil'))
+        return redirect(url_for('Main.receptfornyelse'))
     form = LoginForm()
     if form.validate_on_submit():
         user = select_Patient(form.id.data, conn)
@@ -52,7 +41,7 @@ def login():
             login_user(user)
             flash('Login successful.', 'success')
             next_page = request.args.get('next')
-            return redirect(next_page) if next_page else redirect(url_for('Main.profil'))
+            return redirect(next_page) if next_page else redirect(url_for('Main.receptfornyelse'))
         else:
             flash('Login Unsuccessful. Please check identifier and password', 'danger')
     return render_template('login.html', title='Login', form=form)

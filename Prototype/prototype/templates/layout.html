@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css', v=0.05) }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/progress.css') }}">
 
     {% if title %}
@@ -22,38 +22,6 @@
 </head>
 <body>
 <div class="app" :class="[confirmed? 'app__green' : '']">
-    <!--<header class="noget">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="/">UIS Prototype</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-
-              {% if current_user.is_authenticated %}
-                <li class="dropdown">
-                 <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">UIS bank<b class="caret"></b></a>
-                 <ul class="dropdown-menu">
-                    <li class="divider"></li>
-                    <li><a class="nav-item nav-link" href="https://www.pgadmin.org">site pgAdmin</a></li>
-                    <li><a class="nav-item nav-link" href="http://127.0.0.1:58653/browser/ ">pgAdmin4</a></li>
-                 </ul>
-               </li>
-              {% else %}
-              {% endif %}
-
-            </div>
-            Navbar Right Side
-            <div class="navbar-nav">
-
-
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>-->
     <main role="main" class="container">
       <div class="row">
         <div class="content_wrap"> 
@@ -73,7 +41,7 @@
               <li><a href="#"><img src="{{ url_for('static', filename='images/name.png') }}" class="menu_image">Navn</a></li>
               <li><a href="#"><img src="{{ url_for('static', filename='images/messages.png') }}" class="menu_image">Meddelser</a></li>
               <li><a href="#"><img src="{{ url_for('static', filename='images/appoint.png') }}" class="menu_image">Aftaler</a></li>
-              <li><a href="{{ url_for('Main.sundhedsdata') }}"><img src="{{ url_for('static', filename='images/sd.png') }}" class="menu_image">Sundhedsdata</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/sd.png') }}" class="menu_image">Sundhedsdata</a></li>
               <li class="dropdown">
                 <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{ url_for('static', filename='images/doc.png') }}" class="menu_image">Receptfornyelse<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -83,9 +51,7 @@
                    <li><a href="{{ url_for('Main.historik') }}" class="nav-item nav-link">Historik</a></li>
                 </ul>
               </li>
-              <!--<li><a href="{{ url_for('Main.medicinkort') }}">Medicinkort</a></li>
-              <li><a href="{{ url_for('Main.historik') }}">Historik</a></li>-->
-              <li><a href="{{ url_for('Main.profil') }}"><img src="{{ url_for('static', filename='images/avatar.png') }}" class="menu_image">Profil</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/avatar.png') }}" class="menu_image">Profil</a></li>
               <li><a href="#"><img src="{{ url_for('static', filename='images/info.png') }}" class="menu_image">Få hjælp</a></li>
               <a class="nav-item nav-link" style="font-size: 12px; padding:0;" href="{{ url_for('Main.logout') }}">Log ud af minsundhedsplatform.dk</a>
           </div>
@@ -99,22 +65,6 @@
             </div>
           </div>
         </div>
-      <!--<div class="col-md-4">
-          <div class="content-section">
-            <h3>Account</h3>
-              <ul class="list-group">
-              {% if current_user.is_authenticated %}
-                <li class="list-group-item list-group-item-light">Checking Accounts</li>
-                <li class="list-group-item list-group-item-light">Investment Accounts</li>
-
-                <li class="list-group-item list-group-item-light">etc</li>
-              {% else %}
-                <li class="list-group-item list-group-item-light">etc</li>
-              {% endif %}
-              </ul>
-            </p>
-          </div>
-        </div>-->
       </div>
     </main>
 
