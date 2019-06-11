@@ -86,8 +86,6 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(len(p), 1)
         insert_New_Renewed_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, conn)
         q = get_Active_Prescriptions(5000, conn)
-        #insert_New_Renewed_Prescription calls update_Active_Prescription, thus the number
-        # of active prescriptions stays the same
         self.assertEqual(len(q), 1)
         self.assertTrue(q[0].medicine_name == p[0].medicine_name
                         and q[0].medicine_concentration == p[0].medicine_concentration

@@ -123,7 +123,6 @@ def update_Active_Prescription(CPR_number, med_name, med_conc, conn):
     cur.execute(sql, (med_name, med_conc, CPR_number))
     cur.close()
 
-# ======= Describe hard coded values in report =======
 def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, conn):
     update_Active_Prescription(CPR_number, med_name, med_conc, conn)
     cur = conn.cursor()

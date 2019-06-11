@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS Prescription(
     illness text REFERENCES Diagnose(illness),
     active text,
     FOREIGN KEY (medicine_name, medicine_concentration) REFERENCES Medicine(name, concentration),
-    PRIMARY KEY (medicine_name, medicine_concentration, patient_CPR, renewal)
+    PRIMARY KEY (medicine_name, medicine_concentration, patient_CPR, illness, renewal)
 );
 
 CREATE TABLE IF NOT EXISTS In_treatment_for(
