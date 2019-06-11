@@ -63,12 +63,12 @@
 
 % Implementerer en række makroer og de pakker der er importeret
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \pagestyle{fancy}                        % Implementerer sidehoved         %
-    \lhead{Københavns Universitet}                % Venstre sidehoved               %
-    \rhead{Casper, Sarah, Torben, Mads}                             % Højre sidehoved      %
-    \cfoot{\thepage\ of \zpageref{LastPage}} % Side x af y                     %
-    \newtheorem*{prp}{Propostion}            % Skaber nyt theorem  
-    \renewcommand{\baselinestretch}{1.2}       %
+\pagestyle{fancy}                        % Implementerer sidehoved         %
+\lhead{Københavns Universitet}                % Venstre sidehoved               %
+\rhead{Casper, Sarah, Torben, Mads}                             % Højre sidehoved      %
+\cfoot{\thepage\ of \zpageref{LastPage}} % Side x af y                     %
+\newtheorem*{prp}{Propostion}            % Skaber nyt theorem  
+\renewcommand{\baselinestretch}{1.2}       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Mindsker afstanden mellem sektioner
@@ -84,105 +84,105 @@
 %%%%%%%%%%%%
 
 \begin{document}
-
-\begin{titlepage}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
-
-\center % Center everything on the page
- 
-%----------------------------------------------------------------------------------------
-%	HEADING SECTIONS
-%----------------------------------------------------------------------------------------
-
-\textsc{\Large Københavns Universitet}\\[1.5cm] % Name of your university/college
-\textsc{\large Datalogi}\\[0.5cm] % Major heading such as course name
-\textsc{\normalsize Udvikling af informationssystemer}\\[0.5cm] % Minor heading such as course title
-
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-\HRule \\[0.4cm]
-{ \LARGE \bfseries Forundersøgelsesrapport\\Diabetes og Min Sundhedsplatform}\\[0.4cm] % Title of your document
-\HRule \\[1.5cm]
- 
-%----------------------------------------------------------------------------------------
-%	AUTHOR SECTION
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \normalsize
-\emph{Forfattere:}\\ 
-% Your name
-Casper \textsc{Bresdahl} whs715\\
-Sarah \textsc{Kirstine Willumsen} zql291\\
-Torben \textsc{Olai Milhøj} vrw704\\
-Mads \textsc{Rosenlund Jensen} lfh632\\
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \normalsize
-\emph{Undervisere:} \\
-Finn \textsc{Kensing}\\ % Supervisor's Name
-Anders \textsc{Lassen}\\
-Lasse \textsc{Petersen}\\
-\hfill \\
-\end{flushright}
-\end{minipage}\\[2cm]
-
-% If you don't want a supervisor, uncomment the two lines below and remove the section above
-%\Large \emph{Forfattere:}\\
-%Axel \textsc{Christof}\\% Your name
-%Casper \textsc{Bresdahl}\\
-%Emilie \textsc{Bentsen}\\[1cm] 
-
-%----------------------------------------------------------------------------------------
-%	DATE SECTION
-%----------------------------------------------------------------------------------------
-
-{\normalsize \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
-
-%----------------------------------------------------------------------------------------
-%	LOGO SECTION
-%----------------------------------------------------------------------------------------
-
-\includegraphics[scale=0.91]{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
- 
-%----------------------------------------------------------------------------------------
-
-\vfill % Fill the rest of the page with whitespace
-\newpage
-
-%Disse linjer skaber forside, evt indholdsfortegnelse, og sætter sidetal
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-									                                           %
-    \thispagestyle{empty}   % Fjerner sidetal forside                          %
-        % Slå disse til hvis der ønskes indholdsfortegnelse                    %
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-           % TODO2 Hvorfor skal den køres to gange?   
-            \newpage                % Side til indholdsfortegnelse            %
-            \thispagestyle{empty}   % Fjerner sidetal fra indholdsfortegnelse %
-            \tableofcontents        % Skaber indholdsfortegnelse              %
-            \thispagestyle{empty}   % Fjerner sidetal fra indholdsfortegnelse %
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \newpage                % Første rigtige side
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\end{titlepage}
-{\fontsize{12}{14}\selectfont
-\setcounter{page}{1}
-\include{Sections/Summaries/Summaries}
-\include{Sections/Objective/Objective}
-\include{Sections/Vurdering/VurderingAfPrioriteter}
-\include{Sections/Visioner/VisionerOmSamledeForandring}
-\include{Sections/Fordele/Fordele_Ulemper}
-\include{Sections/Finanser}
-\include{Sections/Strategi/ImplementationStrategyAndPlan}
-\include{Sections/Prototype/Prototype}
-\include{Sections/AnbefalingerOgPrioriteringer}
-\include{Sections/Bilag}
-
-
-\end{document}
+	
+	\begin{titlepage}
+		
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+		
+		\center % Center everything on the page
+		
+		%----------------------------------------------------------------------------------------
+		%	HEADING SECTIONS
+		%----------------------------------------------------------------------------------------
+		
+		\textsc{\Large Københavns Universitet}\\[1.5cm] % Name of your university/college
+		\textsc{\large Datalogi}\\[0.5cm] % Major heading such as course name
+		\textsc{\normalsize Udvikling af informationssystemer}\\[0.5cm] % Minor heading such as course title
+		
+		%----------------------------------------------------------------------------------------
+		%	TITLE SECTION
+		%----------------------------------------------------------------------------------------
+		
+		\HRule \\[0.4cm]
+		{ \LARGE \bfseries Forundersøgelsesrapport\\Diabetes og Min Sundhedsplatform}\\[0.4cm] % Title of your document
+		\HRule \\[1.5cm]
+		
+		%----------------------------------------------------------------------------------------
+		%	AUTHOR SECTION
+		%----------------------------------------------------------------------------------------
+		
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushleft} \normalsize
+				\emph{Forfattere:}\\ 
+				% Your name
+				Casper \textsc{Bresdahl} whs715\\
+				Sarah \textsc{Kirstine Willumsen} zql291\\
+				Torben \textsc{Olai Milhøj} Eksamensnummer: 63\\
+				Mads \textsc{Rosenlund Jensen} Eksamensnummer: 77\\
+			\end{flushleft}
+		\end{minipage}
+		~
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \normalsize
+				\emph{Undervisere:} \\
+				Finn \textsc{Kensing}\\ % Supervisor's Name
+				Anders \textsc{Lassen}\\
+				Lasse \textsc{Petersen}\\
+				\hfill \\
+			\end{flushright}
+		\end{minipage}\\[2cm]
+		
+		% If you don't want a supervisor, uncomment the two lines below and remove the section above
+		%\Large \emph{Forfattere:}\\
+		%Axel \textsc{Christof}\\% Your name
+		%Casper \textsc{Bresdahl}\\
+		%Emilie \textsc{Bentsen}\\[1cm] 
+		
+		%----------------------------------------------------------------------------------------
+		%	DATE SECTION
+		%----------------------------------------------------------------------------------------
+		
+		{\normalsize \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+		
+		%----------------------------------------------------------------------------------------
+		%	LOGO SECTION
+		%----------------------------------------------------------------------------------------
+		
+		\includegraphics[scale=0.91]{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+		
+		%----------------------------------------------------------------------------------------
+		
+		\vfill % Fill the rest of the page with whitespace
+		\newpage
+		
+		%Disse linjer skaber forside, evt indholdsfortegnelse, og sætter sidetal
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		\thispagestyle{empty}   % Fjerner sidetal forside                          %
+		% Slå disse til hvis der ønskes indholdsfortegnelse                    %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% TODO2 Hvorfor skal den køres to gange?   
+		\newpage                % Side til indholdsfortegnelse            %
+		\thispagestyle{empty}   % Fjerner sidetal fra indholdsfortegnelse %
+		\tableofcontents        % Skaber indholdsfortegnelse              %
+		\thispagestyle{empty}   % Fjerner sidetal fra indholdsfortegnelse %
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\newpage                % Første rigtige side
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+	\end{titlepage}
+	{\fontsize{12}{14}\selectfont
+		\setcounter{page}{1}
+		\include{Sections/Summaries/Summaries}
+		\include{Sections/Objective/Objective}
+		\include{Sections/Vurdering/VurderingAfPrioriteter}
+		\include{Sections/Visioner/VisionerOmSamledeForandring}
+		\include{Sections/Fordele/Fordele_Ulemper}
+		\include{Sections/Finanser}
+		\include{Sections/Strategi/ImplementationStrategyAndPlan}
+		\include{Sections/Prototype/Prototype}
+		\include{Sections/AnbefalingerOgPrioriteringer}
+		\include{Sections/Bilag}
+		
+		
+	\end{document}
