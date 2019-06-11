@@ -22,6 +22,38 @@
 </head>
 <body>
 <div class="app" :class="[confirmed? 'app__green' : '']">
+    <!--<header class="noget">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">UIS Prototype</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+
+              {% if current_user.is_authenticated %}
+                <li class="dropdown">
+                 <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">UIS bank<b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                    <li class="divider"></li>
+                    <li><a class="nav-item nav-link" href="https://www.pgadmin.org">site pgAdmin</a></li>
+                    <li><a class="nav-item nav-link" href="http://127.0.0.1:58653/browser/ ">pgAdmin4</a></li>
+                 </ul>
+               </li>
+              {% else %}
+              {% endif %}
+
+            </div>
+            Navbar Right Side
+            <div class="navbar-nav">
+
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>-->
     <main role="main" class="container">
       <div class="row">
         <div class="content_wrap"> 
@@ -38,14 +70,23 @@
           <div class="logosjov"><a href="#"><img src="{{ url_for('static', filename='images/loginlogo.png') }}"></a></div>
           {% if current_user.is_authenticated %}
           <div class="menu">
-              <li><a href="#">Meddelser</a></li>
-              <li><a href="#">Aftaler</a></li>
-              <li><a href="{{ url_for('Main.sundhedsdata') }}">Sundhedsdata</a></li>
-              <li><a href="{{ url_for('Main.receptfornyelse') }}">Receptfornyelse</a></li>
-              <li><a href="{{ url_for('Main.medicinkort') }}">Medicinkort</a></li>
-              <li><a href="{{ url_for('Main.historik') }}">Historik</a></li>
-              <li><a href="{{ url_for('Main.profil') }}">Profil</a></li>
-              <li><a href="#">Få hjælp</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/name.png') }}" class="menu_image">Navn</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/messages.png') }}" class="menu_image">Meddelser</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/appoint.png') }}" class="menu_image">Aftaler</a></li>
+              <li><a href="{{ url_for('Main.sundhedsdata') }}"><img src="{{ url_for('static', filename='images/sd.png') }}" class="menu_image">Sundhedsdata</a></li>
+              <li class="dropdown">
+                <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"><img src="{{ url_for('static', filename='images/doc.png') }}" class="menu_image">Receptfornyelse<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                   <li class="divider"></li>
+                   <li><a href="{{ url_for('Main.receptfornyelse') }}" class="nav-item nav-link" style="float: left;">Forny recept</a></li>
+                   <li><a href="{{ url_for('Main.medicinkort') }}" class="nav-item nav-link">Medicin kort</a></li>
+                   <li><a href="{{ url_for('Main.historik') }}" class="nav-item nav-link">Historik</a></li>
+                </ul>
+              </li>
+              <!--<li><a href="{{ url_for('Main.medicinkort') }}">Medicinkort</a></li>
+              <li><a href="{{ url_for('Main.historik') }}">Historik</a></li>-->
+              <li><a href="{{ url_for('Main.profil') }}"><img src="{{ url_for('static', filename='images/avatar.png') }}" class="menu_image">Profil</a></li>
+              <li><a href="#"><img src="{{ url_for('static', filename='images/info.png') }}" class="menu_image">Få hjælp</a></li>
               <a class="nav-item nav-link" style="font-size: 12px; padding:0;" href="{{ url_for('Main.logout') }}">Log ud af minsundhedsplatform.dk</a>
           </div>
       {% else %}
@@ -58,9 +99,28 @@
             </div>
           </div>
         </div>
+      <!--<div class="col-md-4">
+          <div class="content-section">
+            <h3>Account</h3>
+              <ul class="list-group">
+              {% if current_user.is_authenticated %}
+                <li class="list-group-item list-group-item-light">Checking Accounts</li>
+                <li class="list-group-item list-group-item-light">Investment Accounts</li>
+
+                <li class="list-group-item list-group-item-light">etc</li>
+              {% else %}
+                <li class="list-group-item list-group-item-light">etc</li>
+              {% endif %}
+              </ul>
+            </p>
+          </div>
+        </div>-->
       </div>
     </main>
 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
