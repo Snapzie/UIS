@@ -77,18 +77,19 @@ class MyTestCase(unittest.TestCase):
     def test_update_active_prescription(self):
         p = get_Active_Prescriptions(5000, conn)
         self.assertEqual(len(p), 1)
-        update_Active_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, conn)
+        update_Active_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, p[0].illness, conn)
         p = get_Active_Prescriptions(5000, conn)
         self.assertEqual(len(p), 0)
 
     def test_insert_renewed_prescription(self):
         p = get_Active_Prescriptions(5000, conn)
         self.assertEqual(len(p), 1)
-        insert_New_Renewed_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, conn)
+        insert_New_Renewed_Prescription(5000, p[0].medicine_name, p[0].medicine_concentration, p[0].illness, conn)
         q = get_Active_Prescriptions(5000, conn)
         self.assertEqual(len(q), 1)
         self.assertTrue(q[0].medicine_name == p[0].medicine_name
                         and q[0].medicine_concentration == p[0].medicine_concentration
+                        and q[0].illness == p[0].illness
                         and q[0].patient_CPR == 5000)
 
     def test_join_prescriptions_diagnoses(self):

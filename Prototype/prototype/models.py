@@ -113,24 +113,27 @@ def get_Diagnoses(CPR_number, conn):
     cur.close()
     return diagnoses
 
-def update_Active_Prescription(CPR_number, med_name, med_conc, conn):
+def update_Active_Prescription(CPR_number, med_name, med_conc, illness, conn):
     cur = conn.cursor()
     sql = """
         UPDATE Prescription
         SET active = 'Inactive'
-        WHERE medicine_name = %s AND medicine_concentration = %s AND patient_CPR = %s
+        WHERE medicine_name = %s 
+        AND medicine_concentration = %s 
+        AND patient_CPR = %s
+        AND illness = %s
     """
-    cur.execute(sql, (med_name, med_conc, CPR_number))
+    cur.execute(sql, (med_name, med_conc, CPR_number, illness))
     cur.close()
 
-def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, conn):
-    update_Active_Prescription(CPR_number, med_name, med_conc, conn)
+def insert_New_Renewed_Prescription(CPR_number, med_name, med_conc, illness, conn):
+    update_Active_Prescription(CPR_number, med_name, med_conc, illness, conn)
     cur = conn.cursor()
     sql = """
         INSERT INTO Prescription(pharmacy_name, medicine_name, medicine_concentration, patient_CPR, renewal, status, prescribed, expiration, illness, active)
-        VALUES('Pharmacy 1', %s, %s, %s, current_date, 'Ordered', current_date, current_date, 'Diabetes', 'Active')
+        VALUES('Pharmacy 1', %s, %s, %s, current_date, 'Ordered', current_date, current_date, %s, 'Active')
     """
-    cur.execute(sql, (med_name, med_conc, CPR_number))
+    cur.execute(sql, (med_name, med_conc, CPR_number, illness))
     cur.close()
 
 def join_prescription_diagnose(CPR_number, conn):

@@ -13,9 +13,9 @@ def receptfornyelse():
     p = get_Active_Prescriptions(current_user.get_id(), conn)
     return render_template('receptfornyelse.html', percs=p)
 
-@Main.route('/renew/<med_name>/<med_conc>')
-def renew(med_name, med_conc):
-    insert_New_Renewed_Prescription(current_user.get_id(), med_name, med_conc, conn)
+@Main.route('/renew/<med_name>/<med_conc>/<illness>')
+def renew(med_name, med_conc, illness):
+    insert_New_Renewed_Prescription(current_user.get_id(), med_name, med_conc, illness, conn)
     p = get_Active_Prescriptions(current_user.get_id(), conn)
     flash('Receptfornyelse godkendt.', 'success')
     return redirect(url_for('.receptfornyelse', percs=p))
