@@ -7,7 +7,6 @@ from prototype.models import select_Patient, get_History, get_Diagnoses, get_Act
 
 Main = Blueprint('Main', __name__)
 
-@Main.route("/")
 @Main.route("/receptfornyelse")
 def receptfornyelse():
     p = get_Active_Prescriptions(current_user.get_id(), conn)
@@ -30,6 +29,7 @@ def medicinkort():
     j = join_prescription_diagnose(current_user.get_id(), conn)
     return render_template('medicinkort.html', joined=j)
 
+@Main.route("/")
 @Main.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
