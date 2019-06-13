@@ -1,7 +1,7 @@
 \subsection{Prototype model}
 Ud fra vores forbedringsforslag om et receptfornyelsesmodul og vores MoSCoW prioriteringer, har vi udviklet nedenstående ER-diagram over vores domæne:\\
 \begin{center}
-	\includegraphics[scale=0.441]{Materials/Prototype/NewERDiagram}
+	\includegraphics[scale=0.50]{Materials/Prototype/NewERDiagram}
 \end{center}
 Vores 'recept' entitet kan delvist unikt identificeres ud fra vores andre entiteters nøgler, og er derfor lavet til en weak entity.
 Blandt vores ønskede funktioner er historik og medicinkort. For at implementere en historik-funktion, har det været nødvendigt at tilføje en 'Aktiv' attribut til 'recept' entiteten for at skelne mellem tidligere og nuværende recepter. Ved at lave en query på alle recepter, som tilhører et specifikt CPR-nummer, kan vi finde brugerens historik, mens at vi ved at lave en query på et CPR-nummer og angive 'Aktiv' attributten som sand, finder vi de aktive recepter for patienten.\\
