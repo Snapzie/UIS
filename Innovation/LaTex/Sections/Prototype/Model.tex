@@ -14,7 +14,7 @@ Vi har herefter omsat vores entiteter til tabeller på samme vis som beskrevet i
 	&\textrm{Apotek}(\textrm{\underline{Navn}, Addresse})\\
 	&\textrm{Medicin}(\textrm{\underline{Navn}, \underline{Styrke}})\\
 \end{align*}
-Ligeledes kan 'Diagnose' laves direkte. Denne tabel vil komme til at indeholde alle de diagnoser, som kan gives, og er nødvendig, da en patient kan have mere end én diagnose. Et link til patienthåndbogen for hver diagnose gemmes også.\textcolor{red}{S: Men dette fremgår jo ikke af vores rapport? Laver vi ikke kun prototype for receptfornyelse - ? Hvis I også laver det andet, er det meget fint, men skriv lige 1 til 2 linjer, i starten af dette afsnit, om at vi også har lavet det andet, f.eks. fordi dette var hurtig også at lave prototype for. Husk at det skal matche med mock up :)}
+Ligeledes kan 'Diagnose' laves direkte. Denne tabel vil komme til at indeholde alle de diagnoser, som kan gives, og er nødvendig, da en patient kan have mere end én diagnose. Et link til patienthåndbogen for hver diagnose gemmes også.
 \begin{equation*}
 \textrm{Diagnose}(\textrm{\underline{Sygdom}, Link})
 \end{equation*}
@@ -26,7 +26,7 @@ Hvis vi skulle lave vores relationer om til tabeller, ville der blive en masse r
 \begin{equation*}
 \textrm{BehandlesFor}(\textrm{\underline{PatCPR}, \underline{Sygdom}})
 \end{equation*}
-Da samtlige danskere har adgang til Min Sundhedsplatform skal der opbevares store mængder af data. Vi mener derfor det er vigtigere at reducere redundancy end at kunne levere hurtige queries. Vi kan undgå redundancy ved at normalisere alle vores tabeller til BCNF. Kigger vi på tabellerne ser vi at de fleste tabeller kun har to attributter. Da enten begge attributter udgør deres key, eller den ene attribut har en functional dependancy over i den anden attribut, har vi at de eneste functional dependancies i disse tabeller er key constraints, og disse er altså trivielt i BCNF.\\
+Da samtlige danskere har adgang til Min Sundhedsplatform\footnote{Var tilfældet ved projektets begyndelse.} skal der opbevares store mængder af data. Vi mener derfor det er vigtigere at reducere redundancy end at kunne levere hurtige queries. Vi kan undgå redundancy ved at normalisere alle vores tabeller til BCNF. Kigger vi på tabellerne ser vi at de fleste tabeller kun har to attributter. Da enten begge attributter udgør deres key, eller den ene attribut har en functional dependancy over i den anden attribut, har vi at de eneste functional dependancies i disse tabeller er key constraints, og disse er altså trivielt i BCNF.\\
 Vi kan identificere en recept unikt gennem 'MedNavn', 'MedStyrke', 'PatCPR', 'Sygdom' og 'Fornyet'. Dette betyder at vi har en functional dependancy:
 \begin{equation*}
 	\textrm{MedNavn, MedStyrke, PatCPR, Sygdom, Fornyet} \to \textrm{ApoNavn, Status, Udstedt, Udløber, Aktiv}
